@@ -1,30 +1,32 @@
 <html>
-    <title>Humans of Late Capitalism</title>
-    
+    <title>
+       Humans of Late Capitalism
+    </title>
     <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Humans of Late Capitalism">
-  <meta name="keywords" content="Capitalism, #Humansoflatecapitalism, Society, Technology, Philosophy, Revolution, Progress, Kaptialismus, Late Capitalism">
-  <meta name="author" content="Karl Marx">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Humans of Late Capitalism">
+        <meta name="keywords" content="Capitalism, #Humansoflatecapitalism, Society, Technology, Philosophy, Revolution, Progress, Kaptialismus, Late Capitalism">
+        <meta name="author" content="Karl Marx">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
     <body>
         <div id="feed"></div>
     </body>
-<script src="jquery.instagramFeed.min.js"></script>
-<script >
-    (function($){
-        $(window).on('load', function(){
-            $.instagramFeed({
-                'tag': 'humansoflatecapitalism',
-                'container': "#feed",
-                'display_profile': true,
-                'display_gallery': true,
-                'items': 100,
-                'items_per_row': 5,
-                'margin': 0.5
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="jquery.instagramFeed.min.js"></script>
+    <script >
+        (function($){
+            $(window).on('load', function(){
+                $.instagramFeed({
+                    'tag': 'humansoflatecapitalism',
+                    'container': "#feed",
+                    'display_profile': true,
+                    'display_gallery': true,
+                    'items': 100,
+                    'items_per_row': 5,
+                    'margin': 0.5
+                });
             });
-        });
-    })(jQuery);
-</script>
+        })(jQuery);
+    </script>
 </html>
