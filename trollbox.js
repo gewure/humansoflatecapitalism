@@ -74,15 +74,17 @@ class Trollbox {
     this.onLoad();
   }
 
-  post(message,nickname) {
+  post(message) {
+
     if(message.length > 500)
       return false;
+
     if (!this.ref) {
       return false;
     }
 
     this.ref.push().set({
-      user: nickname,
+      user: this.config.user,
       message: message,
       date: Date.now() / 1e3 | 0
     });
@@ -153,9 +155,9 @@ class Trollbox {
     event.preventDefault();
     const input = event.target.message;
     const message = input.value;
-    const nickname = event.target.nickname.value;
-    console.log(nickname);
-    this.post(message, nickname);
+    //const nickname = event.target.nickname.value;
+    //console.log(nickname);
+    this.post(message);
     input.value = '';
   }
 
