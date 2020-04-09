@@ -80,10 +80,7 @@
         <div id="feeds" style="float: left; display: flex;">
             <div id="feed1"></div>
             <div id="twitter">
-                <a href="https://twitter.com/intent/tweet?button_hashtag=HumansOfLateCapitalism&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">
-                    Tweet #HumansOfLateCapitalism
-                </a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+             
             </div>
             <div id="feed2"></div>
         </div>
@@ -92,7 +89,7 @@
     
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="jquery.instagramFeed.min.js"></script>
-    <script >
+    <script>
         (function($){
             $(window).on('load', function(){
                 $.instagramFeed({
@@ -121,5 +118,22 @@
                 });
             });
         })(jQuery);
+        
+       var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "https://thawing-bayou-32780.herokuapp.com/humansoflatecapitalism",
+          "method": "GET"
+        }
+
+        function getQuote() {
+          $.ajax(settings).done(function(response) {
+            var quote = response[0].caption;
+            $("#twitter").empty();
+            $("#twitter").append(quote);
+          });
+        }
+        getQuote();
     </script>
+            
 </html>
