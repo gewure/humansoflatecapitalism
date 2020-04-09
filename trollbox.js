@@ -153,7 +153,8 @@ class Trollbox {
     event.preventDefault();
     const input = event.target.message;
     const message = input.value;
-    const nickname = event.target.nickname;
+    const nickname = event.target.nickname.value;
+    console.log(nickname);
     this.post(message, nickname);
     input.value = '';
   }
