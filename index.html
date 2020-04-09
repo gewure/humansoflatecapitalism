@@ -36,8 +36,8 @@
         
     /* tweet style */
     #twitter {
-        padding-top: 112px;
-        font-size: 10px;
+        padding-top: 150px;
+        font-size: 12px;
     }
     
     tusername {
@@ -69,6 +69,10 @@
           margin-left: auto;
           margin-right: auto;
         }
+        li a:hoover { 
+            background-color: #ddd;
+            color: black;
+        }
         #navitems {
             display: flex;
             justify-content: center;
@@ -86,7 +90,7 @@
                 </div>
             </ul>
         </div>
-        <div id="text" style="text-align: center; margin:0 auto; display:block;">Late capitalism is a term first used in print by German economist Werner Sombart around the turn of the 20th century.Since 2016, the term has been widely used around the world to refer to perceived absurdities, contradictions, crises, injustices, and inequality created by modern business development.</div>
+        <div id="text" style="text-align: center; margin:0 auto; display:block; padding:10px">Late capitalism is a term first used in print by German economist Werner Sombart around the turn of the 20th century.Since 2016, the term has been widely used around the world to refer to perceived absurdities, contradictions, crises, injustices, and inequality created by modern business development.</div>
         <div id="headerimage"><div>
         <div id="feeds" style="float: left; display: flex; padding-top:10px">
             <div id="feed1"></div>
@@ -140,8 +144,10 @@
         function getQuote() {
           $.ajax(settings).done(function(response) {
             response.forEach(function(tweet) {
-                
-                var tweethtml = "<div class=\"tusername\">"
+               
+                var tweethtml = "<img src=\""
+                +tweet.image+
+                    "\"></img><br><div class=\"tusername\">"
                 +tweet.owner.username+
                     "</div><br><div class=\"ttext\">"
                 +tweet.caption+
