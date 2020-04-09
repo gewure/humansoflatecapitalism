@@ -65,6 +65,7 @@ class Trollbox {
   }
 
   setUser(user) {
+    
     if (user === this.config.user) {
       return false;
     }
@@ -74,6 +75,8 @@ class Trollbox {
   }
 
   post(message) {
+    if(message.length > 500)
+      return false;
     if (!this.ref) {
       return false;
     }
@@ -121,6 +124,7 @@ class Trollbox {
         <div class="TrollboxMessage">
           <form class="TrollboxForm">
             <input class="TrollboxInput" type="text" name="message" placeholder="Message (press enter to submit)" autocomplete="off" />
+            <input class="NicknameInput" type="text" placeholder="Nickname"/>
           </form>
         </div>
       </div>
