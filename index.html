@@ -1,209 +1,236 @@
 <!DOCTYPE html>
 <html>
-    <title>
-       Humans of Late Capitalism
-    </title>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Humans of Late Capitalism">
-        <meta name="keywords" content="Capitalism, #Humansoflatecapitalism, Society, Technology, Philosophy, Revolution, Progress, Kaptialismus, Late Capitalism">
-        <meta name="author" content="Karl Marx">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <script data-ad-client="ca-pub-7578534773537226" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="jquery.instagramFeed.min.js"></script>
-        <script>
-            (function($){
-                $(window).on('load', function(){
-                    $.instagramFeed({
-                        'tag': 'humansoflatecapitalism',
-                        'container': "#feed1",
-                        'display_profile': true,
-                        'diplay_tag':true,
-                        'display_gallery': true,
-                        'items': 70,
-                        'items_per_row': 3,
-                        'margin': 0.5
-                    });
+<title>
+    Humans of Late Capitalism
+</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Humans of Late Capitalism">
+    <meta name="keywords"
+        content="Capitalism, #Humansoflatecapitalism, Society, Technology, Philosophy, Revolution, Progress, Kaptialismus, Late Capitalism">
+    <meta name="author" content="Karl Marx">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script data-ad-client="ca-pub-7578534773537226" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="jquery.instagramFeed.min.js"></script>
+    <script>
+        (function ($) {
+            $(window).on('load', function () {
+                $.instagramFeed({
+                    'tag': 'humansoflatecapitalism',
+                    'container': "#feed1",
+                    'display_profile': true,
+                    'diplay_tag': true,
+                    'display_gallery': true,
+                    'items': 70,
+                    'items_per_row': 3,
+                    'margin': 0.5
                 });
-            })(jQuery);
+            });
+        })(jQuery);
 
-            (function($){
-                $(window).on('load', function(){
-                    $.instagramFeed({
-                        'tag': 'latestagecapitalism',
-                        'container': "#feed2",
-                        'display_profile': true,
-                        'display_gallery': true,
-                        'items': 70,
-                        'items_per_row': 3,
-                        'margin': 0.5
-                    });
+        (function ($) {
+            $(window).on('load', function () {
+                $.instagramFeed({
+                    'tag': 'latestagecapitalism',
+                    'container': "#feed2",
+                    'display_profile': true,
+                    'display_gallery': true,
+                    'items': 70,
+                    'items_per_row': 3,
+                    'margin': 0.5
                 });
-            })(jQuery);
+            });
+        })(jQuery);
 
-           var settings = {
-              "async": true,
-              "crossDomain": false,
-              "url": "https://cors-anywhere.herokuapp.com/https://thawing-bayou-32780.herokuapp.com/humansoflatecapitalism",
-              "method": "GET"
-            }
+        var settings = {
+            "async": true,
+            "crossDomain": false,
+            "url": "https://cors-anywhere.herokuapp.com/https://thawing-bayou-32780.herokuapp.com/humansoflatecapitalism",
+            "method": "GET"
+        }
 
-            function getQuote() {
-              $.ajax(settings).done(function(response) {
-                response.forEach(function(tweet) {
+        function getQuote() {
+            $.ajax(settings).done(function (response) {
+                response.forEach(function (tweet) {
 
                     var tweethtml = "<img style=\"max-width: 100%; height: auto;\" src=\""
-                    +tweet.image+
+                        + tweet.image +
                         "\"></img><br><div class=\"tusername\">"
-                    +tweet.owner.username+
+                        + tweet.owner.username +
                         "</div><br><div class=\"ttext\">"
-                    +tweet.caption+
+                        + tweet.caption +
                         "</div><br><br>";
 
                     $("#twitter").append(tweethtml);
                 });
-              });
-            }
+            });
+        }
 
-            getQuote();
+        getQuote();
 
-        </script>
-    </head>
-    
-    <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif }
+    </script>
+</head>
+
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Raleway", sans-serif
+    }
+
     a {
         color: #ffffff;
         background-color: #A52A2A;
-        }
+    }
 
-    body, html {
-      height: 100%;
-      line-height: 1.8;
+    body,
+    html {
+        height: 100%;
+        line-height: 1.8;
     }
 
     /* Full height image header */
     .bgimg-1 {
-      background-position: center;
-      background-size: cover;
-      min-height: 100%;
+        background-position: center;
+        background-size: cover;
+        min-height: 100%;
     }
 
     .w3-bar .w3-button {
-      padding: 16px;
+        padding: 16px;
     }
-        
+
     /* tweet style */
     #twitter {
         padding-top: 150px;
         font-size: 12px;
     }
-    
+
     .tusername {
         color: #A52A2A;
         font-weight: bold;
     }
-        
-     /* Navbar style */
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          margin-left: auto;
-          margin-right: auto;
-          display: block;
-        }
 
-        li {
-            float: left
-        }
+    /* Navbar style */
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
 
-        li a {
-          display: block;
-          padding: 10px;
-          padding-left: 30px;
-          padding-right: 30px;
-          background-color: #A52A2A;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        li a:hoover { 
-            background-color: #ddd;
-            color: black;
-        }
-        #navitems {
-            display: flex;
-            justify-content: center;
-        }
+    li {
+        float: left
+    }
+
+    li a {
+        display: block;
+        padding: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: #A52A2A;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    li a:hoover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    #navitems {
+        display: flex;
+        justify-content: center;
+    }
 </style>
-    
-    <body>
-        <div id="navbar">
-            <ul>
-                <div id="navitems">
+
+<body>
+    <div id="navbar">
+        <ul>
+            <div id="navitems">
                 <li><a href="#Feed">Feed</a></li>
                 <li><a href="#About">About</a></li>
                 <li><a href="#Organize">Organize</a></li>
                 <li><a href="#Donate">Donate</a></li>
-                </div>
-            </ul>
-        </div>
-        <div id="headtext" style="text-align: center; margin: auto; display:block; padding:10px">
-           The term Late Capitalism has been widely used since the 21th century around the world to refer to perceived absurdities, contradictions, crises, injustices, and inequality created by modern business development.</div>
-        <div id="headerimage"><div>
-        <div id="feeds" style="float: left; display: flex; padding-top:10px">
-            <div id="feed1"></div>
-            <div id="twitter">
-             
             </div>
-            <div id="feed2"></div>
-        </div>
-        <div id="trollboxx">
-        </div>
-            
+        </ul>
+    </div>
+    <div id="headtext" style="text-align: center; margin: auto; display:block; padding:10px">
+        The term Late Capitalism has been widely used since the 21th century around the world to refer to perceived
+        absurdities, contradictions, crises, injustices, and inequality created by modern business development.</div>
+    <div id="headerimage">
+        <div>
+            <div id="feeds" style="float: left; display: flex; padding-top:10px">
+                <div id="feed1"></div>
+                <div id="trollboxx-wrap">
+                    <div id="trollboxx">
+                    </div>
+                    <div>
+                        <form>
+                            <label for="nickname">Humans<script>Math.ceil(Math.random() * 333);</script></label>
+                            <input type="text" id="nickname" name="nickname">
+                            <input type="submit" value="Submit">
+                          </form>
+                    </div>
+                </div>
+
+                <div id="feed2"></div>
+            </div>
+            <div id="twitter">
+            </div>
+
             <!-- The core Firebase JS SDK is always required and must be listed first -->
             <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
 
             <!-- TODO: Add SDKs for Firebase products that you want to use
                  https://firebase.google.com/docs/web/setup#available-libraries -->
             <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
-            
+
             <!-- trollbox -->
             <script src="trollbox.js"></script>
 
 
             <script>
-              // Your web app's Firebase configuration
-              var config = {
-                  container:'#trollboxx',
-                  firebase: {
-                    apiKey: "AIzaSyAqdpjKouv3GcJWOePr8V3RX4Z5ZLYQ_Ko",
-                    authDomain: "humansoflatecapitalism.firebaseapp.com",
-                    databaseURL: "https://humansoflatecapitalism.firebaseio.com",
-                    projectId: "humansoflatecapitalism",
-                    storageBucket: "humansoflatecapitalism.appspot.com",
-                    messagingSenderId: "556042637345",
-                    appId: "1:556042637345:web:27764d4b88765db4d05360",
-                    measurementId: "G-T50S7EMMED"
-                  },
-                   channel: 'Free Market Trollbox',
-                   user: 'Human',
-                   delayRender: false
-              };
-              // Initialize Firebase
-              firebase.initializeApp(config.firebase);
-              firebase.analytics();
-   
+                // Your web app's Firebase configuration
+                var config = {
+                    container: '#trollboxx',
+                    firebase: {
+                        apiKey: "AIzaSyAqdpjKouv3GcJWOePr8V3RX4Z5ZLYQ_Ko",
+                        authDomain: "humansoflatecapitalism.firebaseapp.com",
+                        databaseURL: "https://humansoflatecapitalism.firebaseio.com",
+                        projectId: "humansoflatecapitalism",
+                        storageBucket: "humansoflatecapitalism.appspot.com",
+                        messagingSenderId: "556042637345",
+                        appId: "1:556042637345:web:27764d4b88765db4d05360",
+                        measurementId: "G-T50S7EMMED"
+                    },
+                    channel: 'Free Market Trollbox',
+                    user: 'Human',
+                    delayRender: false
+                };
+                // Initialize Firebase
+                firebase.initializeApp(config.firebase);
+                firebase.analytics();
+
                 //Initialize Trollbox
-              function initBox () {
-                  var trollbox = new window.Trollbox(config)
+                function initBox() {
+                    var trollbox = new window.Trollbox(config)
                 }
 
                 initBox();
             </script>
-    </body>
-            
+</body>
+
 </html>
