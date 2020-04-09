@@ -140,7 +140,13 @@
         function getQuote() {
           $.ajax(settings).done(function(response) {
             response.forEach(function(tweet) {
-                var tweethtml = "<div>"+tweet.owner.username+"</div class=\"tusername\"><br><div class=\"ttext\">"+tweet.caption+"</div><br><br>";
+                
+                var tweethtml = "<div class=\"tusername\">"
+                +tweet.owner.username+
+                    "</div><br><div class=\"ttext\">"
+                +tweet.caption+
+                    "</div><br><br>";
+                
                 $("#twitter").append(tweethtml);
             });
           });
