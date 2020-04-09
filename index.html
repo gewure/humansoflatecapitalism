@@ -9,6 +9,67 @@
         <meta name="keywords" content="Capitalism, #Humansoflatecapitalism, Society, Technology, Philosophy, Revolution, Progress, Kaptialismus, Late Capitalism">
         <meta name="author" content="Karl Marx">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script data-ad-client="ca-pub-7578534773537226" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="jquery.instagramFeed.min.js"></script>
+        <script>
+            (function($){
+                $(window).on('load', function(){
+                    $.instagramFeed({
+                        'tag': 'humansoflatecapitalism',
+                        'container': "#feed1",
+                        'display_profile': true,
+                        'diplay_tag':true,
+                        'display_gallery': true,
+                        'items': 70,
+                        'items_per_row': 3,
+                        'margin': 0.5
+                    });
+                });
+            })(jQuery);
+
+            (function($){
+                $(window).on('load', function(){
+                    $.instagramFeed({
+                        'tag': 'latestagecapitalism',
+                        'container': "#feed2",
+                        'display_profile': true,
+                        'display_gallery': true,
+                        'items': 70,
+                        'items_per_row': 3,
+                        'margin': 0.5
+                    });
+                });
+            })(jQuery);
+
+           var settings = {
+              "async": true,
+              "crossDomain": false,
+              "url": "https://cors-anywhere.herokuapp.com/https://thawing-bayou-32780.herokuapp.com/humansoflatecapitalism",
+              "method": "GET"
+            }
+
+            function getQuote() {
+              $.ajax(settings).done(function(response) {
+                response.forEach(function(tweet) {
+
+                    var tweethtml = "<img style=\"max-width: 100%; height: auto;\" src=\""
+                    +tweet.image+
+                        "\"></img><br><div class=\"tusername\">"
+                    +tweet.owner.username+
+                        "</div><br><div class=\"ttext\">"
+                    +tweet.caption+
+                        "</div><br><br>";
+
+                    $("#twitter").append(tweethtml);
+                });
+              });
+            }
+
+            getQuote();
+
+        </script>
     </head>
     
     <style>
@@ -101,66 +162,5 @@
             <div id="feed2"></div>
         </div>
     </body>
-    <script data-ad-client="ca-pub-7578534773537226" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="jquery.instagramFeed.min.js"></script>
-    <script>
-        (function($){
-            $(window).on('load', function(){
-                $.instagramFeed({
-                    'tag': 'humansoflatecapitalism',
-                    'container': "#feed1",
-                    'display_profile': true,
-                    'diplay_tag':true,
-                    'display_gallery': true,
-                    'items': 70,
-                    'items_per_row': 3,
-                    'margin': 0.5
-                });
-            });
-        })(jQuery);
-        
-        (function($){
-            $(window).on('load', function(){
-                $.instagramFeed({
-                    'tag': 'latestagecapitalism',
-                    'container': "#feed2",
-                    'display_profile': true,
-                    'display_gallery': true,
-                    'items': 70,
-                    'items_per_row': 3,
-                    'margin': 0.5
-                });
-            });
-        })(jQuery);
-        
-       var settings = {
-          "async": true,
-          "crossDomain": false,
-          "url": "https://cors-anywhere.herokuapp.com/https://thawing-bayou-32780.herokuapp.com/humansoflatecapitalism",
-          "method": "GET"
-        }
-
-        function getQuote() {
-          $.ajax(settings).done(function(response) {
-            response.forEach(function(tweet) {
-               
-                var tweethtml = "<img style=\"max-width: 100%; height: auto;\" src=\""
-                +tweet.image+
-                    "\"></img><br><div class=\"tusername\">"
-                +tweet.owner.username+
-                    "</div><br><div class=\"ttext\">"
-                +tweet.caption+
-                    "</div><br><br>";
-                
-                $("#twitter").append(tweethtml);
-            });
-          });
-        }
-        
-        getQuote();
-       
-    </script>
             
 </html>
