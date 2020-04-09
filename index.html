@@ -93,18 +93,24 @@
                     'tag': 'humansoflatecapitalism',
                     'container': "#feed1",
                     'display_profile': false,
+                    'diplay_tag':true,
                     'display_gallery': true,
-                    'items': 100,
+                    'items': 70,
                     'items_per_row': 3,
                     'margin': 0.5
                 });
-                                         
-                 $.instagramFeed({
+            });
+        })(jQuery);
+        
+        (function($){
+            $(window).on('load', function(){
+                $.instagramFeed({
                     'tag': 'latestagecapitalism',
                     'container': "#feed2",
                     'display_profile': false,
+                    'diplay_tag':true,
                     'display_gallery': true,
-                    'items': 100,
+                    'items': 70,
                     'items_per_row': 3,
                     'margin': 0.5
                 });
