@@ -92,7 +92,7 @@
                 $.instagramFeed({
                     'tag': 'humansoflatecapitalism',
                     'container': "#feed1",
-                    'display_profile': false,
+                    'display_profile': true,
                     'diplay_tag':true,
                     'display_gallery': true,
                     'items': 70,
@@ -104,11 +104,10 @@
         
         (function($){
             $(window).on('load', function(){
-                $.instagramFeed({
+                $.instagramFeed2({
                     'tag': 'latestagecapitalism',
                     'container': "#feed2",
-                    'display_profile': false,
-                    'diplay_tag':true,
+                    'display_profile': true,
                     'display_gallery': true,
                     'items': 70,
                     'items_per_row': 3,
