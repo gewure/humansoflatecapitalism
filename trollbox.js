@@ -74,7 +74,7 @@ class Trollbox {
     this.onLoad();
   }
 
-  post(message) {
+  post(message,nickname) {
     if(message.length > 500)
       return false;
     if (!this.ref) {
@@ -82,7 +82,7 @@ class Trollbox {
     }
 
     this.ref.push().set({
-      user: this.config.user,
+      user: nickname,
       message: message,
       date: Date.now() / 1e3 | 0
     });
@@ -124,7 +124,7 @@ class Trollbox {
         <div class="TrollboxMessage">
           <form class="TrollboxForm">
             <input class="TrollboxInput" type="text" name="message" placeholder="Message (press enter to submit)" autocomplete="off" />
-            <input class="NicknameInput" type="text" placeholder="Nickname"/>
+            <input class="NicknameInput" type="text" name="nickname" placeholder="Nickname"/>
           </form>
         </div>
       </div>
@@ -153,7 +153,8 @@ class Trollbox {
     event.preventDefault();
     const input = event.target.message;
     const message = input.value;
-    this.post(message);
+    const nickname = event.target.nickname;
+    this.post(message, nickname);
     input.value = '';
   }
 
