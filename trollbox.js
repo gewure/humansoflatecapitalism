@@ -115,7 +115,7 @@ class Trollbox {
     const html = `
       <div class="TrollboxContainer">
         <div class="TrollboxHeader">
-          <a>Trollbox</a>
+          <a href="#Trollboxtitle" style="text-align: center; margin: auto; display:block; padding:10px>Trollbox</a>
         </div>
         <div class="TrollboxMessages">
           <ul class="TrollboxMessagesList">
