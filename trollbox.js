@@ -66,7 +66,6 @@
       }
 
       setUser(user) {
-
         if (user === this.config.user) {
           return false;
         }
@@ -76,10 +75,6 @@
       }
 
       post(message) {
-
-        if (message.length > 500)
-          return false;
-
         if (!this.ref) {
           return false;
         }
@@ -116,21 +111,21 @@
 
         // ugly, quick, and dirty
         const html = `
-      <div class="TrollboxContainer">
-        <div class="TrollboxHeader">
-          Trollbox
+        <div class="TrollboxContainer">
+          <div class="TrollboxHeader">
+            Trollbox
+          </div>
+          <div class="TrollboxMessages">
+            <ul class="TrollboxMessagesList">
+            </ul>
+          </div>
+          <div class="TrollboxMessage">
+            <form class="TrollboxForm">
+              <input class="TrollboxInput" type="text" name="message" placeholder="Message (press enter to submit)" autocomplete="off" />
+            </form>
+          </div>
         </div>
-        <div class="TrollboxMessages">
-          <ul class="TrollboxMessagesList">
-          </ul>
-        </div>
-        <div class="TrollboxMessage">
-          <form class="TrollboxForm">
-            <input class="TrollboxInput" type="text" name="message" placeholder="Message (press enter to submit)" autocomplete="off" />
-          </form>
-        </div>
-      </div>
-    `;
+      `;
 
         const doc = document.createDocumentFragment();
         const div = document.createElement('div');
@@ -155,8 +150,6 @@
         event.preventDefault();
         const input = event.target.message;
         const message = input.value;
-        //const nickname = event.target.nickname.value;
-        //console.log(nickname);
         this.post(message);
         input.value = '';
       }
