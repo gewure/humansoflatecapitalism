@@ -13,11 +13,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="trollbox.css" />
 
+    <!-- Google adds-->
     <script data-ad-client="ca-pub-7578534773537226" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Jquery-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- 3rdparty-->
     <script src="jquery.instagramFeed.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <!-- Add SDKs for Firebase products that you want to use
+                     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+    <!-- trollbox -->
+    <script src="trollbox.js"></script>
     <script>
         (function ($) {
             $(window).on('load', function () {
@@ -183,24 +195,12 @@
                 <script src="https://yvoschaap.com/ytpage/ytembed.js"></script>
                 <div id="ytThumbs"></div>
                 <script>
-                    ytEmbed.init({'block':'ytThumbs','key':'your-youtube-developer-key','q':'late capitalism','type':'search','results':5,'meta':true,'player':'embed','layout':'full'});
+                    ytEmbed.init({ 'block': 'ytThumbs', 'key': 'your-youtube-developer-key', 'q': 'late capitalism', 'type': 'search', 'results': 5, 'meta': true, 'player': 'embed', 'layout': 'full' });
                 </script>
             </div>
             <div id="trollboxx-wrap">
                 <div id="trollboxx"></div>
             </div>
-
-
-            <!-- The core Firebase JS SDK is always required and must be listed first -->
-            <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
-
-            <!-- TODO: Add SDKs for Firebase products that you want to use
-                 https://firebase.google.com/docs/web/setup#available-libraries -->
-            <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
-
-            <!-- trollbox -->
-            <script src="trollbox.js"></script>
-
 
             <script>
                 // Your web app's Firebase configuration
