@@ -115,7 +115,7 @@ class Trollbox {
     const html = `
       <div class="TrollboxContainer">
         <div class="TrollboxHeader">
-          Trollbox
+          <a>Trollbox</a>
         </div>
         <div class="TrollboxMessages">
           <ul class="TrollboxMessagesList">
