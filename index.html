@@ -161,6 +161,45 @@
             </div>
             <div id="feed2"></div>
         </div>
+        <div id="trollboxx">
+        </div>
+            
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                 https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+            <script>
+              // Your web app's Firebase configuration
+              var config = {
+                  container:'#trollboxx',
+                  firebase: {
+                    apiKey: "AIzaSyAqdpjKouv3GcJWOePr8V3RX4Z5ZLYQ_Ko",
+                    authDomain: "humansoflatecapitalism.firebaseapp.com",
+                    databaseURL: "https://humansoflatecapitalism.firebaseio.com",
+                    projectId: "humansoflatecapitalism",
+                    storageBucket: "humansoflatecapitalism.appspot.com",
+                    messagingSenderId: "556042637345",
+                    appId: "1:556042637345:web:27764d4b88765db4d05360",
+                    measurementId: "G-T50S7EMMED"
+                  },
+                   channel: 'Free Market Trollbox',
+                   user: 'Human',
+                   delayRender: false
+              };
+              // Initialize Firebase
+              firebase.initializeApp(config.firebase);
+              firebase.analytics();
+   
+                //Initialize Trollbox
+              function initBox () {
+                  var trollbox = new window.Trollbox(config)
+                }
+
+                initBox();
+            </script>
     </body>
             
 </html>
