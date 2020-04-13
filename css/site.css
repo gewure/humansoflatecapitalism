@@ -1,0 +1,289 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Verdana", sans-serif
+}
+
+a {
+    color: #ffffff;
+    background-color: #A52A2A;
+    font-size: 1vw;
+}
+
+body,
+html {
+    height: 100%;
+    line-height: 1.8;
+    font-family: "Verdana";
+}
+
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    min-height: 100%;
+}
+
+.w3-bar .w3-button {
+    padding: 16px;
+}
+
+/* tweet style */
+#twitter {
+    padding-top: 150px;
+    font-size: 12px;
+}
+
+.tusername {
+    color: #A52A2A;
+    font-weight: bold;
+}
+
+/* Navbar style */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+li {
+    float: left
+}
+
+li a {
+    display: block;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #A52A2A;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li a:hoover {
+    background-color: #ddd;
+    color: black;
+}
+
+#navitems {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes rainbow-text {
+    0% {
+        color: #681a1a;
+    }
+
+    2% {
+        color: #681a1a;
+    }
+
+    4% {
+        color: #7c2020;
+    }
+
+    6% {
+        color: #7c2020;
+    }
+
+    8% {
+        color:#912525;
+    }
+
+    10% {
+        color: #912525;
+    }
+
+    12% {
+        color: #a52a2a;
+    }
+
+    14% {
+        color: #a52a2a;
+    }
+
+    16% {
+        color: #b92f2f;
+    }
+
+    18% {
+        color:#b92f2f;
+    }
+
+    20% {
+        color:#cc3636 ;
+    }
+
+    22% {
+        color: #cc3636;
+    }
+
+    24% {
+        color: #d14a4a;
+    }
+
+    26% {
+        color:#d14a4a;
+    }
+
+    28% {
+        color: #b92f2f;
+    }
+
+    30% {
+        color: #b92f2f;
+    }
+
+    32% {
+        color: #dc7373;
+    }
+
+    34% {
+        color: #dc7373;
+    }
+
+    36% {
+        color:#ebb0b0;
+    }
+
+    38% {
+        color: #ebb0b0;
+    }
+
+    40% {
+        color: #b92f2f;
+    }
+
+    42% {
+        color: #b92f2f;
+    }
+
+    44% {
+        color: #d14a4a;
+    }
+
+    46% {
+        color: #d14a4a;
+    }
+
+    48% {
+        color: #cc3636;
+    }
+
+    50% {
+        color: #cc3636;
+    }
+
+    52% {
+        color: #b92f2f;
+    }
+
+    54% {
+        color: #b92f2f;
+    }
+
+    56% {
+        color: #b92f2f;
+    }
+
+    58% {
+        color: #b92f2f;
+    }
+
+    60% {
+        color: #d14a4a;
+    }
+
+    62% {
+        color: #d14a4a;
+    }
+
+    64% {
+        color: #a52a2a;
+    }
+
+    66% {
+        color: #a52a2a;
+    }
+
+    68% {
+        color: #912525;
+    }
+
+    70% {
+        color: #912525;
+    }
+
+    72% {
+        color: #7c2020;
+    }
+
+    74% {
+        color: #7c2020;
+    }
+
+    76% {
+        color: #681b1b;
+    }
+
+    78% {
+        color: #681b1b;
+    }
+
+    80% {
+        color: #531616;
+    }
+
+    82% {
+        color: #531616;
+    }
+
+    84% {
+        color: #3f1010;
+    }
+
+    86% {
+        color: #681a1a;
+    }
+
+    88% {
+        color: #af2929;
+    }
+
+    90% {
+        color: #c41717;
+    }
+
+    92% {
+        color: #bd0000;
+    }
+
+    94% {
+        color: #970202;
+    }
+
+    96% {
+        color: #770202;
+    }
+
+    98% {
+        color: #3f0101;
+    }
+
+    100% {
+        color: #2e0101;
+    }
+}
+
+.rainbow-text {
+    animation: rainbow-text 12s infinite;
+}

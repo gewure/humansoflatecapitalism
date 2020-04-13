@@ -12,204 +12,126 @@
     <meta name="author" content="Karl Marx">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google adds-->
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/site.css" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google ads-->
     <script data-ad-client="ca-pub-7578534773537226" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
     <!-- Jquery-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
 </head>
 
-<style>
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: "Raleway", sans-serif;
-    }
-
-    a {
-        color: #ffffff;
-        background-color: #A52A2A;
-        font-size: 16;
-    }
-
-    body,
-    html {
-        height: 100%;
-        line-height: 1.8;
-    }
-
-    /* Full height image header */
-    .bgimg-1 {
-        background-position: center;
-        background-size: cover;
-        min-height: 100%;
-    }
-
-    .w3-bar .w3-button {
-        padding: 16px;
-    }
-
-    /* tweet style */
-    #twitter {
-        padding-top: 150px;
-        font-size: 12px;
-    }
-
-    .tusername {
-        color: #A52A2A;
-        font-weight: bold;
-    }
-
-    /* Navbar style */
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-    }
-
-    li {
-        float: left;
-    }
-
-    li a {
-        display: block;
-        padding: 10px;
-        padding-left: 30px;
-        padding-right: 30px;
-        background-color: #A52A2A;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    li a:hoover {
-        background-color: #ddd;
-        color: black;
-    }
-
-    #navitems {
-        display: flex;
-        justify-content: center;
-    }
-</style>
-
 <body>
-    <div id="navbar">
-        <ul>
-            <div id="navitems">
-                <li><a href="#Feed">Feed</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Organize">Organize</a></li>
-                <li><a href="#Donate">Donate</a></li>
-            </div>
-        </ul>
+    <div id="top-of-page">
+        <div id="navbar">
+            <ul>
+                <div id="navitems">
+                    <li><a href="index.html">Feeds</a></li>
+                    <li><a href="#Organize">Organize</a></li>
+                    <li><a href="#Top100Memes">Top 100</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#Blog">Blog</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+
+                </div>
+            </ul>
+        </div>
+        <div id="headtext" style="text-align: center; margin: auto; display:block; padding:10px">
+            <!-- TODO maybe make this an image to scale better
+                ... or how about a jq-approach using $(window).width() and adapt font-size accordingly?-->
+            <pre style="line-height: 85%; font-size:1vw;">
+      ██╗  ██╗██╗   ██╗███╗   ███╗ █████╗ ███╗   ██╗███████╗     ██████╗ ███████╗                                    
+      ██║  ██║██║   ██║████╗ ████║██╔══██╗████╗  ██║██╔════╝    ██╔═══██╗██╔════╝                                    
+      ███████║██║   ██║██╔████╔██║███████║██╔██╗ ██║███████╗    ██║   ██║█████╗                                      
+      ██╔══██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║╚════██║    ██║   ██║██╔══╝                                      
+      ██║  ██║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║███████║    ╚██████╔╝██║                                         
+      ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝     ╚═════╝ ╚═╝                                         
+                                                                                                                     
+      ██╗      █████╗ ████████╗███████╗     ██████╗ █████╗ ██████╗ ██╗████████╗ █████╗ ██╗     ██╗███████╗███╗   ███╗
+      ██║     ██╔══██╗╚══██╔══╝██╔════╝    ██╔════╝██╔══██╗██╔══██╗██║╚══██╔══╝██╔══██╗██║     ██║██╔════╝████╗ ████║
+      ██║     ███████║   ██║   █████╗      ██║     ███████║██████╔╝██║   ██║   ███████║██║     ██║███████╗██╔████╔██║
+      ██║     ██╔══██║   ██║   ██╔══╝      ██║     ██╔══██║██╔═══╝ ██║   ██║   ██╔══██║██║     ██║╚════██║██║╚██╔╝██║
+      ███████╗██║  ██║   ██║   ███████╗    ╚██████╗██║  ██║██║     ██║   ██║   ██║  ██║███████╗██║███████║██║ ╚═╝ ██║
+      ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝     ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝╚══════╝╚═╝     ╚═╝
+    </pre>
+            The term Late Capitalism has been widely used since the 21th century around the world to refer to perceived
+            absurdities, contradictions, crises, injustices, and inequality created by modern business development.
+        </div>
     </div>
-    <div id="headtext" style="text-align: center; margin: auto; display:block; padding:10px">
-        <pre style="font-weight: bold; line-height: 80%;">
-   __    __                                                                         ______                                            
-  |  \  |  \                                                                       /      \                                           
-  | $$  | $$ __    __  ______ ____    ______   _______    _______         ______  |  $$$$$$\                                          
-  | $$__| $$|  \  |  \|      \    \  |      \ |       \  /       \       /      \ | $$_  \$$                                          
-  | $$    $$| $$  | $$| $$$$$$\$$$$\  \$$$$$$\| $$$$$$$\|  $$$$$$$      |  $$$$$$\| $$ \                                              
-  | $$$$$$$$| $$  | $$| $$ | $$ | $$ /      $$| $$  | $$ \$$    \       | $$  | $$| $$$$                                              
-  | $$  | $$| $$__/ $$| $$ | $$ | $$|  $$$$$$$| $$  | $$ _\$$$$$$\      | $$__/ $$| $$                                                
-  | $$  | $$ \$$    $$| $$ | $$ | $$ \$$    $$| $$  | $$|       $$       \$$    $$| $$                                                
-   \$$   \$$  \$$$$$$  \$$  \$$  \$$  \$$$$$$$ \$$   \$$ \$$$$$$$         \$$$$$$  \$$                                                
-                                                                                                                                      
-   __                    __                       ______                       __    __                __  __                         
-  |  \                  |  \                     /      \                     |  \  |  \              |  \|  \                        
-  | $$        ______   _| $$_     ______        |  $$$$$$\  ______    ______   \$$ _| $$_     ______  | $$ \$$  _______  ______ ____  
-  | $$       |      \ |   $$ \   /      \       | $$   \$$ |      \  /      \ |  \|   $$ \   |      \ | $$|  \ /       \|      \    \ 
-  | $$        \$$$$$$\ \$$$$$$  |  $$$$$$\      | $$        \$$$$$$\|  $$$$$$\| $$ \$$$$$$    \$$$$$$\| $$| $$|  $$$$$$$| $$$$$$\$$$$\
-  | $$       /      $$  | $$ __ | $$    $$      | $$   __  /      $$| $$  | $$| $$  | $$ __  /      $$| $$| $$ \$$    \ | $$ | $$ | $$
-  | $$_____ |  $$$$$$$  | $$|  \| $$$$$$$$      | $$__/  \|  $$$$$$$| $$__/ $$| $$  | $$|  \|  $$$$$$$| $$| $$ _\$$$$$$\| $$ | $$ | $$
-  | $$     \ \$$    $$   \$$  $$ \$$     \       \$$    $$ \$$    $$| $$    $$| $$   \$$  $$ \$$    $$| $$| $$|       $$| $$ | $$ | $$
-   \$$$$$$$$  \$$$$$$$    \$$$$   \$$$$$$$        \$$$$$$   \$$$$$$$| $$$$$$$  \$$    \$$$$   \$$$$$$$ \$$ \$$ \$$$$$$$  \$$  \$$  \$$
-                                                                    | $$                                                              
-                                                                    | $$                                                              
-                                                                     \$$                                                              
-        </pre>
-        The term Late Capitalism has been widely used since the 21th century around the world to refer to perceived
-        absurdities, contradictions, crises, injustices, and inequality created by modern business development.</div>
-    <div id="headerimage"><div>
-    <div id="about-content" style="padding: 30px;">
-        <h2>Meme Communities</h2><br>
-        <pre>
-            Just Humans of Late Capitalism Things
-            https://www.facebook.com/Justhumansoflatecapitalismthings/
-            Zlazloj Zlizlek
-            https://www.facebook.com/zlazloj.zizek/
-            Humans of Late Capitalism
-            https://www.facebook.com/humansoflatecapitalism/
-            Soundes like late stage capitalism but ok
-            https://www.facebook.com/groups/more.like.crapitalism/
-            I would prefer not to
-            https://www.facebook.com/wouldprefernot/
-            DisturbingQuotes
-            https://www.facebook.com/DisturbingQuotes/
-        </pre>
+    <div id="middle-of-page">
+        <div id="about-content" style="padding: 30px;">
+            <h2>Meme Communities</h2>
 
-        <h2>Political Organisations</h2><br>
-        <pre>
-            CrimethInc. 
-            https://crimethinc.com/
+            <a href="https://www.facebook.com/Justhumansoflatecapitalismthings/">== >></a>
+            Just Humans of Late Capitalism Things<br>
+            <a href="https://www.facebook.com/zlazloj.zizek/">== >></a>Zlazloj Zlizlek<br>
+            <a href="https://www.facebook.com/humansoflatecapitalism/">== >></a> Humans of Late Capitalism<br>
+            <a href="https://www.facebook.com/groups/more.like.crapitalism/">== >></a>Soundes like late stage
+            capitalismbut ok<br>
+            <a href="https://www.facebook.com/wouldprefernot/">== >></a>I would prefer not to<br>
+            <a href="https://www.facebook.com/DisturbingQuotes/">== >></a>DisturbingQuotes<br>
 
-            Indymedia
-            https://www.indymedia.org
+            <h2>Political Organisations</h2>
+            <a href="https://crimethinc.com/">== >></a>CrimethInc.<br>
+            <a href="https://www.indymedia.org">== >></a>Indymedia<br>
+            <a href="https://www.riseup.net">== >></a>Riseup Collective<br>
 
-            Riseup Collective
-            https://www.riseup.net
-        </pre>
+            <h2>Media Controversy</h2>
+            <a href="https://www.theatlantic.com/business/archive/2017/05/late-capitalism/524943/">== >></a> Why the
+            Phrase 'Late Capitalism' is suddenly Everywhere<br>
+            <a href="https://www.bloomberg.com/opinion/articles/2020-01-10/-late-capitalism-not-even-close">==
+                >></a>‘Late Capitalism’? Not Even Close<br>
+            <a href="https://theweek.com/articles/892631/late-capitalism-isnt-killing">== >></a>Late Capitalism isn't
+            killing us
+            <br>
 
-        <h2>Media Controversy</h2><br>
-        <pre>
-            Why the Phrase 'Late Capitalism' is suddenly Everywhere
-            https://www.theatlantic.com/business/archive/2017/05/late-capitalism/524943/
+            <h2>Forums</h2>
+            <a href="https://www.reddit.com/r/LateStageCapitalism/">== >></a>Reddit - Late Stage Capitalism<br>
+
+            <h2>Philosophical & Scientific Resources</h2>
+            <a href="https://www.sciencedirect.com/topics/social-sciences/late-capitalism">== >></a>Science Direct -
+            Quotes of Term 'Late Capitalism'<br>
+            <a href="https://www.marxists.org/reference/archive/adorno/1968/late-capitalism.htm">== >></a>Late
+            Capitalism or Industrial Society?<br>
+            <a
+                href="https://www.sociostudies.org/almanac/articles/late_capitalism_and_neoliberalism_a_perspective_on_the_current_phase_of_the_long_wave_of_capitali/">== >></a>LATE
+            CAPITALISM AND NEO-LIBERALISM – A PERSPECTIVE ON THE CURRENT PHASE OF THE LONG WAVE OF CAPITALIST
+            DEVELOPMENT<br>
+
+
+            <h2>Misc</h2>
+
             
-            ‘Late Capitalism’? Not Even Close
-            https://www.bloomberg.com/opinion/articles/2020-01-10/-late-capitalism-not-even-close
-
-            Late Capitalism isn't killing us
-            https://theweek.com/articles/892631/late-capitalism-isnt-killing
-        </pre>
-
-        <h2>Forums</h2><br>
-        <pre>
-            Reddit - Late Stage Capitalism
-            https://www.reddit.com/r/LateStageCapitalism/
+            <a href="https://knowyourmeme.com/memes/cultures/late-capitalism">==></a>Know your Meme<br>
 
 
-        </pre>
 
-        <h2>Philosophical & Scientific Resources</h2><br>
-        <pre>
-            Science Direct - Quotes of Term 'Late Capitalism'
-            https://www.sciencedirect.com/topics/social-sciences/late-capitalism
-
-            Late Capitalism or Industrial Society?
-            https://www.marxists.org/reference/archive/adorno/1968/late-capitalism.htm
-
-            LATE CAPITALISM AND NEO-LIBERALISM – A PERSPECTIVE ON THE CURRENT PHASE OF THE LONG WAVE OF CAPITALIST DEVELOPMENT
-            https://www.sociostudies.org/almanac/articles/late_capitalism_and_neoliberalism_a_perspective_on_the_current_phase_of_the_long_wave_of_capitali/
-        </pre>
-        
-        <h2>Misc</h2><br>
-        <pre>
-            Know your Meme
-            https://knowyourmeme.com/memes/cultures/late-capitalism
-        </pre>
-
-
+        </div>
     </div>
-            
+
+    <div id="bottom-of-page" style="font-size: 0.5vw; text-align: center;">
+        <div class="rainbow-text" style="font-weight: bold;">
+            010010001110100110110011000001101110111001010011101100110100110011000001110100110010010000101100000111000011010001110100110000011011001101000111001011011000101110110001011011101101101
+        </div>
+        <div id=footer>
+            2020, all rights reserved [no, they aren't]<br>
+            Using the usual cookies<br>
+            Giving something about your privacy
+        </div>
+    </div>
+
 </body>
 
 </html>

@@ -12,139 +12,94 @@
     <meta name="author" content="Karl Marx">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google adds-->
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/site.css" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google ads-->
     <script data-ad-client="ca-pub-7578534773537226" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
     <!-- Jquery-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
 </head>
 
-<style>
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: "Raleway", sans-serif;
-    }
-
-    a {
-        color: #ffffff;
-        background-color: #A52A2A;
-        font-size: 16;
-    }
-
-    body,
-    html {
-        height: 100%;
-        line-height: 1.8;
-    }
-
-    /* Full height image header */
-    .bgimg-1 {
-        background-position: center;
-        background-size: cover;
-        min-height: 100%;
-    }
-
-    .w3-bar .w3-button {
-        padding: 16px;
-    }
-
-    /* tweet style */
-    #twitter {
-        padding-top: 150px;
-        font-size: 12px;
-    }
-
-    .tusername {
-        color: #A52A2A;
-        font-weight: bold;
-    }
-
-    /* Navbar style */
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-    }
-
-    li {
-        float: left;
-    }
-
-    li a {
-        display: block;
-        padding: 10px;
-        padding-left: 30px;
-        padding-right: 30px;
-        background-color: #A52A2A;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    li a:hoover {
-        background-color: #ddd;
-        color: black;
-    }
-
-    #navitems {
-        display: flex;
-        justify-content: center;
-    }
-</style>
-
 <body>
-    <div id="navbar">
-        <ul>
-            <div id="navitems">
-                <li><a href="#Feed">Feed</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Organize">Organize</a></li>
-                <li><a href="#Donate">Donate</a></li>
-            </div>
-        </ul>
+    <div id="top-of-page">
+        <div id="navbar">
+            <ul>
+                <div id="navitems">
+                    <li><a href="index.html">Feeds</a></li>
+                    <li><a href="#Organize">Organize</a></li>
+                    <li><a href="#Top100Memes">Top 100</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#Blog">Blog</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+
+                </div>
+            </ul>
+        </div>
+        <div id="headtext" style="text-align: center; margin: auto; display:block; padding:10px">
+            <!-- TODO maybe make this an image to scale better
+            ... or how about a jq-approach using $(window).width() and adapt font-size accordingly?-->
+            <pre style="line-height: 85%; font-size:1vw;">
+  ██╗  ██╗██╗   ██╗███╗   ███╗ █████╗ ███╗   ██╗███████╗     ██████╗ ███████╗                                    
+  ██║  ██║██║   ██║████╗ ████║██╔══██╗████╗  ██║██╔════╝    ██╔═══██╗██╔════╝                                    
+  ███████║██║   ██║██╔████╔██║███████║██╔██╗ ██║███████╗    ██║   ██║█████╗                                      
+  ██╔══██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║╚════██║    ██║   ██║██╔══╝                                      
+  ██║  ██║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║███████║    ╚██████╔╝██║                                         
+  ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝     ╚═════╝ ╚═╝                                         
+                                                                                                                 
+  ██╗      █████╗ ████████╗███████╗     ██████╗ █████╗ ██████╗ ██╗████████╗ █████╗ ██╗     ██╗███████╗███╗   ███╗
+  ██║     ██╔══██╗╚══██╔══╝██╔════╝    ██╔════╝██╔══██╗██╔══██╗██║╚══██╔══╝██╔══██╗██║     ██║██╔════╝████╗ ████║
+  ██║     ███████║   ██║   █████╗      ██║     ███████║██████╔╝██║   ██║   ███████║██║     ██║███████╗██╔████╔██║
+  ██║     ██╔══██║   ██║   ██╔══╝      ██║     ██╔══██║██╔═══╝ ██║   ██║   ██╔══██║██║     ██║╚════██║██║╚██╔╝██║
+  ███████╗██║  ██║   ██║   ███████╗    ╚██████╗██║  ██║██║     ██║   ██║   ██║  ██║███████╗██║███████║██║ ╚═╝ ██║
+  ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝     ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝╚══════╝╚═╝     ╚═╝
+</pre>
+            The term Late Capitalism has been widely used since the 21th century around the world to refer to perceived
+            absurdities, contradictions, crises, injustices, and inequality created by modern business development.
+        </div>
     </div>
-    <div id="headtext" style="text-align: center; margin: auto; display:block; padding:10px">
-        The term Late Capitalism has been widely used since the 21th century around the world to refer to perceived
-        absurdities, contradictions, crises, injustices, and inequality created by modern business development.</div>
-    <div id="headerimage">
-        <div>
-            <div id="about-content" style="padding: 30px;">
-                <h2>Money doesn't buy happiness</h2><br>
-                <pre>
-            HumansOfLateCapitalism.com
-            Usage: hosting and developing the site
-                Dogecoin: 
-                Bitcoin:
-                Ethereum:
-                Litecoin:
-        </pre>
 
-                <h2>but certainly helps</h2><br>
-                <pre>
-            CrimethInc. 
-            Invest your Money into CrimethInc!
-            https://de.crimethinc.com/support
+    <div id="middle_of-Page">
+        <div id="donate-content" style="padding: 100px; ">
+            <h2>Give us your Money</h2>
 
-            Medecins Sans Frontieres
-            https://www.msf.org/donate
+            HumansOfLateCapitalism.com<br><br>
 
-            Reporters Without Borders
-            https://donate.rsf.org/b/my-donation
+            Bitcoin: <br>
+            Ethereum: <br>
+            Litecoin: <br>
+            Dogecoin: <br>
 
-        </pre>
 
-                <h2>Thank you</h2><br>
-                <div style="align-content: center;"><img src="assets/donald-small.gif"></div>
-                <div id="embeddedShopWrapper">
+            <h2>Or better give it to them</h2>
+
+            CrimethInc. Collectives <br>
+            <a href="https://de.crimethinc.com/support">https://de.crimethinc.com/support</a> <br><br>
+
+            Medecins Sans Frontieres<br>
+            <a href="https://www.msf.org/donate">https://de.crimethinc.com/support</a><br><br>
+
+            Reporters Without Borders<br>
+            <a href="https://donate.rsf.org/b/my-donation">https://de.crimethinc.com/support</a>
+
+
+            <h2>Thank you</h2>
+            <div style="align-content: center;">
+                <img src="assets/donald-small.gif">
+            </div>
+            <!-- <div id="embeddedShopWrapper">
                     <div id="myShop">
                         <a href="https://shop.spreadshirt.com/humansoflatecapitalism">#humansoflatecapitalism
                             Merchandise</a>
@@ -162,10 +117,22 @@
                     <script type="text/javascript"
                         src="https://shop.spreadshirt.com/shopfiles/shopclient/shopclient.nocache.js">
                         </script>
-                </div>
+                </div> -->
 
 
-            </div>
+        </div>
+    </div>
+
+    <div id="bottom-of-page" style="font-size: 0.5vw; text-align: center;">
+        <div class="rainbow-text" style="font-weight: bold;">
+            010010001110100110110011000001101110111001010011101100110100110011000001110100110010010000101100000111000011010001110100110000011011001101000111001011011000101110110001011011101101101
+        </div>
+        <div id=footer>
+            2020, all rights reserved [no, they aren't]<br>
+            Using the usual cookies<br>
+            Giving something about your privacy
+        </div>
+    </div>
 
 </body>
 
