@@ -11,7 +11,7 @@ h6 {
 a {
     color: #ffffff;
     background-color: #A52A2A;
-    font-size: 1vw;
+    font-size: 2vw;
 }
 
 body,
@@ -60,15 +60,15 @@ li {
 
 li a {
     display: block;
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
     background-color: #A52A2A;
     margin-left: auto;
     margin-right: auto;
 }
 
-li a:hoover {
+li a:hover {
     background-color: #ddd;
     color: black;
 }
