@@ -43,6 +43,15 @@ html {
     font-weight: bold;
 }
 
+#banner-text {
+    font-size: 1.5vh;
+    line-height: 95%;
+}
+
+#banner-text:hover {
+    background-color: whitesmoke;
+}
+
 /* Navbar style */
 ul {
     list-style-type: none;

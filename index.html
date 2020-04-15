@@ -47,8 +47,24 @@
 
     <!-- trollbox -->
     <script src="scripts/trollbox.js"></script>
+    <!-- latecapitalism texts-->
+    <script src="scripts/latecapitalismtext.js"></script>
 
     <script>
+
+        var lasttext = 0;
+        function writeLateCapitalismTextBanner() {
+            if (lasttext < texts.length) {
+                $("#banner-text").empty();
+                $("#banner-text").append(texts[lasttext]);
+                lasttext++;
+            } else {
+                lasttext = 0;
+            }
+        }
+
+        setInterval(writeLateCapitalismTextBanner, 20000);
+
         (function ($) {
             $(window).on('load', function () {
                 $.instagramFeed({
@@ -179,8 +195,10 @@
   ███████╗██║  ██║   ██║   ███████╗    ╚██████╗██║  ██║██║     ██║   ██║   ██║  ██║███████╗██║███████║██║ ╚═╝ ██║
   ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝     ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝╚══════╝╚═╝     ╚═╝
 </pre>
-The term Late Capitalism been widely used since the 21th century around the world to refer to perceived absurdities, contradictions, crises, injustices, and inequality created by modern business development.
-</div>
+            <div id="banner-text" onclick=writeLateCapitalismTextBanner()>The term Late Capitalism been widely used since the 21th century around the world to
+                refer to perceived absurdities, contradictions, crises, injustices, and inequality created by modern
+                business development.</div>
+        </div>
     </div>
 
     <div id="middle-of-Page">
