@@ -54,7 +54,7 @@ html {
 
 /* this _should_ fix the rendering-glitch on mobile of the ascii-pre */
 #ascii-banner {
-    font-family: Courier New;
+    font-family: monospace;
 }
 
 /* Navbar style */
