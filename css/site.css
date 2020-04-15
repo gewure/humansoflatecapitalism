@@ -52,6 +52,11 @@ html {
     background-color: whitesmoke;
 }
 
+/* this _should_ fix the rendering-glitch on mobile of the ascii-pre */
+#ascii-banner {
+    font-family: Courier New;
+}
+
 /* Navbar style */
 ul {
     list-style-type: none;
