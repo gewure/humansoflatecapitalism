@@ -31,6 +31,20 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+    <script>
+        var lasttext = 0;
+        function writeLateCapitalismTextBanner() {
+            if (lasttext < texts.length) {
+                $("#banner-text").empty();
+                $("#banner-text").append(texts[lasttext]);
+                lasttext++;
+            } else {
+                lasttext = 0;
+            }
+        }
+
+        setInterval(writeLateCapitalismTextBanner, 20000);</script>
+
 </head>
 
 <body>
@@ -66,8 +80,10 @@
       ███████╗██║  ██║   ██║   ███████╗    ╚██████╗██║  ██║██║     ██║   ██║   ██║  ██║███████╗██║███████║██║ ╚═╝ ██║
       ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝     ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝╚══════╝╚═╝     ╚═╝
     </pre>
-            The term Late Capitalism has been widely used since the 21th century around the world to refer to perceived
-            absurdities, contradictions, crises, injustices, and inequality created by modern business development.
+            <div id="banner-text" onclick=writeLateCapitalismTextBanner()>The term Late Capitalism been widely used
+                since the 21th century around the world to
+                refer to perceived absurdities, contradictions, crises, injustices, and inequality created by modern
+                business development.</div>
         </div>
     </div>
     <div id="middle-of-page">

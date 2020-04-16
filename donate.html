@@ -31,6 +31,21 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+    <script>
+        var lasttext = 0;
+        function writeLateCapitalismTextBanner() {
+            if (lasttext < texts.length) {
+                $("#banner-text").empty();
+                $("#banner-text").append(texts[lasttext]);
+                lasttext++;
+            } else {
+                lasttext = 0;
+            }
+        }
+
+        setInterval(writeLateCapitalismTextBanner, 20000);
+    </script>
+
 </head>
 
 <body>
@@ -66,8 +81,10 @@
   ███████╗██║  ██║   ██║   ███████╗    ╚██████╗██║  ██║██║     ██║   ██║   ██║  ██║███████╗██║███████║██║ ╚═╝ ██║
   ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝     ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝╚══════╝╚═╝     ╚═╝
 </pre>
-            The term Late Capitalism has been widely used since the 21th century around the world to refer to perceived
-            absurdities, contradictions, crises, injustices, and inequality created by modern business development.
+            <div id="banner-text" onclick=writeLateCapitalismTextBanner()>The term Late Capitalism been widely used
+                since the 21th century around the world to
+                refer to perceived absurdities, contradictions, crises, injustices, and inequality created by modern
+                business development.</div>
         </div>
     </div>
 
@@ -81,7 +98,8 @@
             Ethereum: 0x86259e752DE0f13b75984c250cdFca663B293C99 <br>
             Litecoin: LSNCFJXVggJxrYBnSqZvJpxhGs1y3owgaB <br>
             Dogecoin: D9BT1TYbrj11K9wRf72ASUk96efYQtHHmT <br>
-            Buy us a Ko-Fi: <a href=https://ko-fi.com/humansoflatecapitalism>https://ko-fi.com/humansoflatecapitalism</a>
+            Buy us a Ko-Fi: <a
+                href=https://ko-fi.com/humansoflatecapitalism>https://ko-fi.com/humansoflatecapitalism</a>
             <h2>Or better give it to them</h2>
 
             Medecins Sans Frontieres<br>
@@ -97,7 +115,7 @@
             <div style="align-content: center;">
                 <img src="assets/donald-small.gif">
             </div>
-            Want to get listed? <a href="mailto:humansoflatecapitalism.com@gmail.com">email us.</a> 
+            Want to get listed? <a href="mailto:humansoflatecapitalism.com@gmail.com">email us.</a>
         </div>
     </div>
 
