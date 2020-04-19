@@ -52,6 +52,9 @@
     <script src="scripts/trollbox.js"></script>
     <!-- latecapitalism texts-->
     <script src="scripts/latecapitalismtext.js"></script>
+    <!-- youtube search embedded -->
+    <script src="scripts/ytembed.js"></script>
+
 
     <!--Blotter.js for awesome effects-->
     <!-- <script src="scripts/blotter.min.js"></script>
@@ -71,49 +74,6 @@
         }
 
         setInterval(writeLateCapitalismTextBanner, 20000);
-
-        (function ($) {
-            $(window).on('load', function () {
-                $.instagramFeed({
-                    'tag': 'humansoflatecapitalism',
-                    'container': "#feed1",
-                    'display_profile': true,
-                    'diplay_tag': true,
-                    'display_gallery': true,
-                    'items': 70,
-                    'items_per_row': 2,
-                    'margin': 0.5
-                });
-            });
-        })(jQuery);
-
-        (function ($) {
-            $(window).on('load', function () {
-                $.instagramFeed({
-                    'tag': 'latestagecapitalism',
-                    'container': "#feed2",
-                    'display_profile': true,
-                    'display_gallery': true,
-                    'items': 70,
-                    'items_per_row': 2,
-                    'margin': 0.5
-                });
-            });
-        })(jQuery);
-
-        (function ($) {
-            $(window).on('load', function () {
-                $.instagramFeed({
-                    'tag': 'latecapitalism',
-                    'container': "#feed3",
-                    'display_profile': true,
-                    'display_gallery': true,
-                    'items': 70,
-                    'items_per_row': 2,
-                    'margin': 0.5
-                });
-            });
-        })(jQuery);
 
         var settings = {
             "async": true,
@@ -139,6 +99,34 @@
             });
         }
         //  getItemsAndBuildHtml();
+
+        // instagra feeds 
+        (function ($) {
+            $(window).on('load', function () {
+                $.instagramFeed({
+                    'tag': 'humansoflatecapitalism',
+                    'container': "#feed1",
+                    'display_gallery': true,
+                    'items': 50,
+                    'items_per_row': 2,
+                    'margin': 0.5
+                });
+            });
+        })(jQuery);
+
+        (function ($) {
+            $(window).on('load', function () {
+                $.instagramFeed({
+                    'tag': 'latecapitalism',
+                    'container': "#feed3",
+                    'display_gallery': true,
+                    'items': 50,
+                    'items_per_row': 2,
+                    'margin': 0.5
+                });
+            });
+        })(jQuery);
+
 
         //firebase conf + conf for trollbox
         var config = {
@@ -171,16 +159,19 @@
 </head>
 
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v6.0"></script>
     <div id="top-of-page">
         <div id="navbar">
             <ul>
                 <div id="navitems">
-                    <li><a href="index.html">Feeds</a></li>
-                    <li><a href="#Organize">Organize</a></li>
-                    <li><a href="#Top100Memes">Top 100</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="#Blog">Blog</a></li>
-                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="index.html" class="link">Feeds</a></li>
+                    <li><a href="#Organize" class="link">Organize</a></li>
+                    <li><a href="#Top100Memes" class="link">Top 100</a></li>
+                    <li><a href="about.html" class="link">About</a></li>
+                    <li><a href="#Blog" class="link">Blog</a></li>
+                    <li><a href="donate.html" class="link">Donate</a></li>
                 </div>
             </ul>
         </div>
@@ -212,29 +203,64 @@
     </div>
 
     <div id="middle-of-Page">
-        <div>
-            <div id="feeds" style="float: left; display: flex; padding-top:10px">
-                <div id="feed1"></div>
-                <div id="feed2"></div>
-                <div id="feed3"></div>
-            </div>
-
-            <div id="youtube">
-                <script src="https://yvoschaap.com/ytpage/ytembed.js"></script>
-                <div id="ytThumbs">
-                </div>
-                <script>
-                    ytEmbed.init({ 'block': 'ytThumbs', 'key': 'AIzaSyDIjPQGx5M5SaiIcUYmCHr_IbWWevjwkN0', 'q': 'late capitalism', 'type': 'search', 'results': 5, 'meta': true, 'player': 'embed', 'layout': 'full' });
-                </script>
-            </div>
-
-            <div id="trollboxx-wrap">
-                <div id="trollboxx"></div>
-            </div>
+        <div id="contentblock">
+            <ul style=" list-style: none; text-align: center;">
+                <li>
+                    <div id="feeds" style="float: left; display: flex;">
+                        <div id="feed1"></div>
+                        <div id="feed3"></div>
+                    </div>
+                </li>
+                <li>
+                    <div id="youtube" style="max-width: 100%;">
+                        <div id="ytThumbs">
+                        </div>
+                        <script>
+                            ytEmbed.init({
+                                'block': 'ytThumbs',
+                                'key': 'AIzaSyDIjPQGx5M5SaiIcUYmCHr_IbWWevjwkN0',
+                                'q': 'late capitalism',
+                                'type': 'search',
+                                'results': 7,
+                                'meta': true,
+                                'player': 'embed',
+                                'layout': 'full'
+                            });
+                        </script>
+                    </div>
+                </li>
+                <li>
+                    <div id="trollboxx-wrap">
+                        <div id="trollboxx"></div>
+                    </div>
+                </li>
+            </ul>
         </div>
+
     </div>
 
-    <div id="bottom-of-page" style="font-size: 0.7vw; text-align: center;">
+    <div id="bottom-of-page" style="font-size: 0.8vw; text-align: center;">
+        <div id="social-shares">
+            <ul style="list-style: none;display: flex; justify-content: center; ">
+                <li>
+                    <div id="facebook-like" style="padding: 4px;">
+                        <div class="fb-like" data-href="http://www.humansoflatecapitalism.com/index.html" data-width=""
+                            data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                    </div>
+
+                </li>
+                <li>
+                    <div id="twitter-share" style="padding: 4px; padding-right: 30px;">
+                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+                            data-size="large" data-text="A communityplatform for the " data-via="latehuman"
+                            data-hashtags="humansoflatecapitalism" data-related="" data-show-count="false">Share on
+                            Twitter</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
         <div class="rainbow-text" style="font-weight: bold;">
             0̶̨̲̟͔̟͇̜̞̭͔͙̘̩̣̪͎͖̎̀̑͒̒̋̑͆̀̚͝1̷̢͙͉͍̼̺̝͎͔̳̭̗̈́̇͒̉̅͛̇̏̍̌̽̑́̂̊̚͜͜͝0̸̢͚̞͇̩̝͈̙̮͉̳̩̔̀̾̓͐̎̑͗̀̌͠0̶̡̻̦͔̯̲̩̙̩̼̫͈̎̈̎̀́̌̕1̸̺̠̳̭̞̳̜͒͛͊̎͝0̸̺̰̤̟̟͙͍̱̤̾̀̀͜ͅ0̵̹͙̑̇̏̈́͂̿̅͠͝0̵͚͙͉͎̠͕̄͒̆̓̈́́̕͘͠͝1̴͙̦̺̙̥͈̹͖̩́̌̓̀̊͜1̴̡̪͈̻͐̈̾̒̈́̑͊̿̎̅̒̉͠1̷̛͈̯͉̝̺̆͒̆͌̃͒͒̕̚͝0̸̤̲͚͇̥͒͐́͒̓̈́͛̽̕̕1̶̡͉̙̘̯͙̪̩͒͒ͅ0̸̲͈͙͎̞͇̠̻̟̟̣͉͎̳͇̆̽̍͊͒́̒̓͠ͅͅ0̶̱̇͑̔̽̌̏̾̀̊̀̎͐1̴̡̺̟̳̥͔̗̪̣͖̥̻͈̈̊̿̈̈́͌́̂̃̏̀̏͌̊̚͜1̶͊̌̌͆͜0̵͚̰̠͎̏͑̑̈̉̀̃̅̅̈́͝1̶̡͔̦̻̮͓͈̻͐1̵̡̛̩̜̮̘͚̉̏̒̌̾̔̄͌̋̃̇̀̕͠͝0̶̢͖̤͎̺͎̮̲̖̇̓̓̈̈́̏̈́͂͌̂͘̚͝͝0̸̮͕̘̤͇̏̍̓̎̂̌͛͠ͅ1̴̧̱̗̱̮̘̞͔̻̑̊́̊͂̂͒͛̈͆̃̈́͝1̸̧̳̱̰̙̪̤͈͔̝̬͇̠̪̰̅͋̈́̀͆̔̓͊͆̅̃̽͋̈̓͘͜͠ͅ0̷̢̛̻͔͚̺̭̠͖̤̾̅̽͌̊́̈͒͑̾̀̊̀͝0̴͍̳͍̤̞͉̟̥͓̟̳͎̻̋͊̓͊̈͊̍̃̇̋̑̇̀̚͜͝0̵̢̡̗̩̌̔̀̔͗̀̅̾̽͑͘0̴̨͎̙͔̠̪̹̠͉̭͛̓̈́͒͛0̶̨̛̻͉̰̣͚͈͙̜͎̹̞͇̞̽̀̂͂̌̐̐̃̊͌͌͛̚͠͝ͅͅ1̶̡̧̣̹̫̞̹̻̙̜͈̦̔1̷̩̜́̈́̏́̑̈́͌͆̽̄͐̋̕͝͝0̵̨̻̜̱͚͕̉͛̂1̵̢̫͖̖̝͙̯̪͙͕̭̲̣̏̀̊̍͐́̊́̽̍́̎͊̕̕͝͝1̸͓͉̯̩͕̙̙̦͈̭̥̝̙̣͈̏̈̏͐̓̈́̀1̸̛̳̹̺̣͓̀͂́̈̌̒̕0̸̢̨̧̻̭͚͓̝̻̥͙̩͙̽̎̈́̊̽̓͗͛̉̓͗̾̓̕̚͜͠1̵̢̹̣͖̰̦̗̠̼̓̒͂̿͒̏̀̇̍̋̾̕̚1̴̘̄̕1̷̛̪̤̪͖͉̖̅̔̆̒̀̒́̄̑̇̋̔ͅ0̸̡̡̧̖̝̳̙͈͙̖̠͉̇̀̏̍̈́͝ͅ0̷̢̛̜̥̫̫͙͈̭̞̲̋͛̏̇̉̆̄̈́̊͝͝ͅ1̷̢̫͕̝̥̣͉̣͎̈͂̈̅́̽͌̔̓̿̀̎̏̌̋̕0̸̧̧̲̝̜͙͕̥͍̫̺̥͚̖͎̃̿͒̔͜͝1̴̨̼̤̀̈́̆̒̏̊͂̌͂̽̓0̵̢̡̞̹̪̩͓̦͔͛͊̋̂̍̄̇̉̓͘0̶̧̨̨͉̦̲̹̳͚̭̻̻͉̜͙̩͂̏̃1̴̨̨̢̛̯̻̬̻̝̮̫̰̍̊̓̃̒̈̇͆̌́̀͂͑́̽̚1̴̠̺͑̍1̸̠̘̠̣̼̘͒̍́̀0̸̮͐̊̃1̷̨̖̞̠̞̥̞̺͚̤̱̙̣͆̉̃̓̐̓̂̓́̇̃͑͛̈́̒̽͝1̸̜̺͈̗͚̥̪̘̬̫͙͒͒̐͂̾͂͛̌̆͑͑͛̚0̴̡̛̩̼̪̭͈͉̝̻͒̑́̈́̉́͗͌̿́͝0̸͙̱͑̆̈̋͆͒̈́́̕͘̚͝͝͝͠1̸̞́̕1̷̧͕̔͗̉̎̋́͑̃̋͗̋̄͗0̴̢̨̛̜̮̗̆̍͊͌̂̽͋͛͒̇̉̚̚͝1̸̼̼͉̞̈́̐͜0̵̢̘̩̟͍̟̍̊0̴̟̪̭̟͎̤͎̙̏́̇͑͑̓̚͜1̶̳͉̻̰̃͆̽͊͒̏͌͗́́͝1̷̛̠̋̏͗̽̀͊̀̆0̵̲̳̟̙͙̯͙͉̙̺͕͚̟͇̿̓̍0̶̼̈́̈́͑̅̋͂̈́1̸̧̡̱̟̙̫̣̭̘̱͍̻̩͌́͐̇͜ͅ1̶̡̨̢̣̮͕̤̜̤͔͗̊͌̈́̒̃͝͝0̴̢̳̙̜̘͍̬̾͂̂͒̏͋̌͌͗͑̊̊̀͝0̸̼̬̤̯̮̭͍̭̻͙̻͊̉͆́͐̓̓̚͘͜͜͠͝ͅ0̶̢̡̹̰̹̦̬̝̼̩̙͔̙͉̯̈́͋͑̀́̑͛̎̍̕͝0̵̡̨͕̜̱̮͈̥̖̱̗̲̼̣̫̌͆͗̍̒͊̐͌͋̀͝͝͠0̵̟̯̯̙͎͉̹̿̏̂1̵̨̨̧̢̨̳̭̺̳͉̘̩͓̀́̊̏̂͗͑̂̅͑͌̕͘͜͝͝1̵̪͇̜͖͕͗͆́͋̿͜1̶̨̜͓͍̫͉̭̫̖͕̱͐̈́̊̾͆̓̎͌̒̎̒̓̅̚ͅ0̶̜̣̦͔̤͉̱̀̕1̵̢̳̝̺̜͍̫͕̟͇̯̪̝̞̙̏͋͜0̴͕̜̳̞̜̬̤̈͗͆0̵̨̖͕̳̜͎̖͚̙͈̘̠͓̳̹͈͑̌̒́̚̕͜1̷̧́̎̃̍̿́̂̚1̴̲͚̤̖͖̦͉̾̇̀̀̇̿̅̏͒̽͘̚͝͝͝0̸̨͔̓̄͝0̷̨͉̫̱͙͚̤̈͠1̸̢̛̭̙͍͔̣̗̙͇͋͗͌̄̋͜0̷͉̮͚̦͑̽̍̂̅́̍̀̀̕̚͝͠ͅ0̶̢̛̦̳̺͚̯͓̪̬̼̓̓̎͐̀͛͜1̵̙͉̌0̶̧͉̭̙͇̖̉̃̑̅̀̅̈͗̈̓́̆̕͜͜͝͠ͅ0̸̧̡̡̛͚̤̥̝̬͙̳̠̦͚̜̫͗͛͘̕͝0̵̤̪̻͙͓̓͗̌̽̓̂̀͂0̶̤̟̦̲̝͉͖͓̦̒͌̂̍̈́̇͊̒̉͋̈́̕̚͘ͅ1̴̧̛̪̺͕̰̝͙̣̮̇͛͌̇͠0̶̻̳̫̘̠͙̗̝̤̫̓͌̈̉̆͗̈́̐̈́̃̈̏͆̚̚̚͠1̷̳͙̮̭̮̥̀͂̈́1̴̢̡̻̥͈̥͔͕̙̣̲̝͙̗̳̲̫͋̒̆̌͐̋̃̉͝͝0̴̥̬̜͔̻̫̘̳̯̩͚͍̘̼̊͛̈́͊͐̚͝0̴̢̨̡̩̬̺̠̟͎̭̦̘̙̱̔̈́̀̃͘ͅ0̵̨̧̡͚̮̭̪̮̺͔͇̖͠0̵̢̙͚͙̬̪̖̪́0̴̧̡̢̛̺͓̹͓̻̱̯̳͕̠̹̭̆̒̃̀̿́̍͜͝1̴̝͎̤̦͓̙̯̼͓̮̲̣̙͗ͅ1̴̞̤̠̞̖̯̜̖͚͉̝̒̀̔̈̂̀̈́͜͝ͅ1̸͚̣̥̃̐̊͋͒͊͘͠0̵̧̛̹͉̲̯͛̔͆̿́̓̄͘͝ͅ0̸͈̿͌́̐̉̊͜͝0̵̨̬̰͈̭̼̖͑͌͑͐͆́͊͋̐͑͌̑̚͜0̶̡̝̻̖̫̰͎̜̟̽͜͜1̶̡̛̻̖̠̦̤͖̊͋̐̐̎̋̀̌̃̑́͂̉̚͠͠1̵̙͔̙̫̦̮̪͇͉͉͕̙͌̓̈̌̐̄͋̆̀̋̍̈́͒̚͜0̷̧̧̢̡̙͈̝̗̟̙̞͙̰̯̣͚̀͠1̵̨͔̙͚̻̮͕̙͓͚̼̩̬̼̗̾̀̎͝0̷̛͍̦̙̜̹̣̫̱̲͍̣̥̰̍̎̓̽̑͠0̴̡̻͎̬̰͙͉̦̤̘̥̥͖̤̥͆̾̎̏̒ͅͅ0̸̧̮̩̱̤̾̎̀͆̊̋͑͒̂̀͒̅̿͠͝1̵̯̤̲̥̟͊̃̽̄͛̎͝1̵̩̥̹̞̞͗̌̊̋̾̽̚1̴̘̦̘̦̗̪̗͎̫̤̬̘͔͎́̿̏̽̓͋͌͜͝͝ͅ0̵̧̖̣͖̙̹͕͖̘̥̹̐̊̽͒̀̉͂̉̃͝͝1̵̧̱̙͕͈͈̓̽͊̄̇̀̃̃͊̿ͅ0̶̪̫̳͇̘̝̪͊̊̏̓̾̃̎͐̃͘0̷̢̢͙̥͕̰̣̣̉͒̑̂̃͑̇͑͊̿̉́̓̇͝1̴̥̭̝̻̙̲̈́̾̎̔͒͒͌̊̒1̶̻͔̤̓̊̓̄͊̍̅̇͌0̶̤͍̭̼̳̒̂̇̄̽̕̚͝0̶͓̳̱̺̹͉̅̔̕0̶̩̳̣̑̅́̐̉̾̓͒̓́́0̵̨̢͚̥̗͈̘̮̙̾͊͒̑̅͐͂̎̒̄͑̀̚͘͝͠0̵̭̩̪̳̜͉̼̫͓͖̒̈́ͅ1̷̢̡̨̘̫̦̻̩̰̜̦̬̳̩̣̑̄̂͆͐̈́̐͑̈́͝1̴̢̛͎̺̻̩͍̞̻͖̫̝͓̯̜̏̾̔͗̃̔͊̄͛̇͂̋̒̌̚͠0̷̧͉̪̹̳͉͖̈́͛͗̃͘1̷̧͎̩̽͌͌̾̀̆͊͑̇̆̓̅͗̊͊̕͝1̸̢̡̤̞͚̺̜̭͉͇̝̇̒̍̒̾̚͠͝0̴̦̭̘̭̙̓́͊̀̈̀̎́͝͠0̸̝̑̌͆͑̾̉̎͊̓̽̾̚͝1̴̹̄͜1̶͕̉̈͑́̃̽̀̐̎̓͗͠0̴̨̹̻͈̺̮̲̜̯̣̯͗͛̈́̋̾̎̀̏̔̈̄̈1̵̲̞̹̲̏̿̄̏̎͌̾̀̉͊̀͐͒̍͝0̴̛̙̐̽͂̓͋̔͑́͛̈́̒͂̉͠0̴̛̺͓̣͇̠̳́̈̏̑͘0̵̖̬̭̔͊̆͋̈́͘1̵̞̜̩̖̱̤̘͈͕̩̎̄͜͜ͅͅ1̵̨̧̡͈͉̙̖̺̱̰̀͂͐͐͑͑̀͝1̷̡̤̯̜͖̹̝͉͙̯̫͙̘̂͒͑̾͆̒̈̆̂͋̂0̴̢̢͖͔͕̯̳̌͂̑̈́̂͋͛̂͐̀̾͘ͅ0̷̨̞̥͙̖͚̤̯̬̞͓̮͍̯͖̂̌̿͆̐̈́̐1̶̧̛̛̰̰̲̩̜̼̮̘͉͖̉͗̈́̓̅́̌̇͋̔͛̏͠͝0̸̢͖̬̝̜̩̗̜̬͈̪͖͑͐͒̀͌́̈͗̓͒̾̽̊͜͝͝1̵̧̡̡̝̺͍̻͇̤̙͕̟͎̖̔̊͛̐̽̐͊͒͗̈́̾̋̕͘̚͜1̶̫͕͛̈̈́͌̉͊̆͊̔̇͋͂̽̚͝0̴̞̳̳̺͍̹͔̣̹̓͋̀1̷̢̛̤̠͉̥̬̤̩̱̮̉͑̆͋́̔͑́͠1̸͕̦̠̭̩̜̗̰̜̗͚̲̪̩̩̔̾͆̌̍͑̀̅̽̅̀̓͝͝0̵̥̳̰̙̩͐0̴̨̧̗̹̞͎̞̹̞̥͈͇̣̔͊́͋̕̕͜ͅ0̶̢̝̰̤͉̘̺̪͙̄̃̿ͅ1̵̡̬̺͈̝͍̻͈̻̲̣͓͓̭̗̜̫̄̍͗͆͂0̸̢̘̗͙͔̤̰͕̪̮͛̉̓̋̌͂͒͌̇̕͠͝͝͠1̶̢̧̻̜̣̬̺̝̯̰͎͈͕̗͙̰͚͒1̴̥͓͓͖̝̮̥̟͓̤͓̥̯̺̱̏͒͗͜1̴̛̛̻̱̝̪͚̑̿̎̍̔̀̈́͐̑̓͜0̶̨̜̮̯͎̯͖̟͚͎̮̈́̊͆̀͗̂̏͒̇͒̄̾͐̉͠͝1̸̡̭̮̬̔̐̍͂̑̐̂̆́̃̊̊̿͘1̶̜̦̜̘̹͉̼̜͉̉̽͛͌̓͆͋̌͆̈̈͆̌͋́͋̚0̷̡͎̼̭̺͇̟̰̫̹̠͎̟̃̀͛͑͌͑͑͊͒̓̍͑͑̄̚͝͝0̸͓̱̘͛̓̒̀͘͘͝0̴̧̨̮͚̹̳̼̫͍̟̤̲͈̹͆1̵̢̡̫̪͆̈̉̓0̵̞̙̇̈͑̈̀̏̑͠1̴̟̌1̴̢̛̳̬̭̩̮̗̫̙̎͛͆̒̊͗̏̓̉̀̂̓͊̀̕̕0̴̛̱͈͕͐͐̇̑̈́͋̊̈͌́̉̚͘͝1̷̛̫̺̿͛̆̑͂̀̉͐̒͌̕͠1̴̨̝̲̩̀̂1̶̧̛̞̻͕̲̜́͊̃̈0̷̩̱̜̮̲̼͎͗1̴̟̱͎̱̤̣͉̝̪̃1̵̡̢̲̥͍͔͍̖̬̬̮͖̩̘͖̔͂͜͜0̶̡̨̢̧͔͓͖̳̜̹̤̩̫͐͌̾̽͆͐̉̂̉̍̔̌̚͜͝1̷̨̢̞͖̣̥̳̪̪̠̯͔̘͛́̀̓̐̈͑̐́͊͆͛͗͘͘͜͝1̴̧̡̖̗͔̮͕̪̘͕̩͇͕͈̊0̵̢̼̬̹̗͈͎̦̣̮͚̙̊͋̉1̶͚̓̂̐̐̾̎́͐̈́͘͝
         </div>
