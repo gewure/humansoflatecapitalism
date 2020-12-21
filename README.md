@@ -2,11 +2,15 @@
 
 The [humansoflatecapitalism.com](http://humansoflatecapitalism.com/) source.
 
+## News
+
+WE ARE LOOKING FOR YOU TO PARTICIPATE! 
+
 ## About
 
 A Non-Profit Website that serves the #humansoflatecapitalism community.
 
-## Features
+## Desired Features
 
 - Top #latecapitalism meme aggregation
 - Voting of Top 100 of aggregated memes
