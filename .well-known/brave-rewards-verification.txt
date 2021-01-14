@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: humansoflatecapitalism.com
+Token: 5f286c693ba7a619c073728c647edfd5b3a615da325f73fa2cf4cf4d4fad1e7a
