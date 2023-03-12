@@ -5,7 +5,8 @@
     <title>Humans of Late Capitalism</title>
     <meta charset="UTF-8">
     <meta name="description" content="Humans of Late Capitalism">
-    <meta name="keywords" content="Capitalism, #Humansoflatecapitalism, Society, Technology, Philosophy, Revolution, Progress, Kaptialismus, Late Capitalism">
+    <meta name="keywords"
+        content="Capitalism, #Humansoflatecapitalism, Society, Technology, Philosophy, Revolution, Progress, Kaptialismus, Late Capitalism">
     <meta name="author" content="Karl Marx">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,7 +17,6 @@
     <meta name="msvalidate.01" content="3293E0561C0A8581210DC3F56BF92DBA">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/trollbox.css" />
     <link rel="stylesheet" href="css/site.css" />
 
     <!-- Favicon -->
@@ -44,8 +44,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
 
-    <!-- trollbox -->
-    <script src="scripts/trollbox.js"></script>
     <!-- latecapitalism texts-->
     <script src="scripts/latecapitalismtext.js"></script>
     <!-- youtube search embedded -->
@@ -57,6 +55,7 @@
 
     <script>
         var lasttext = 0;
+
         function writeLateCapitalismTextBanner() {
             if (lasttext < texts.length) {
                 $("#banner-text").empty();
@@ -76,71 +75,71 @@
             "method": "GET"
         }
 
-        function getItemsAndBuildHtml() {
-            $.ajax(settings).done(function (response) {
-                response.forEach(function (tweet) {
+        // function getItemsAndBuildHtml() {
+        //     $.ajax(settings).done(function (response) {
+        //         response.forEach(function (tweet) {
 
-                    var tweethtml = "<img style=\"max-width: 100%; height: auto;\" src=\""
-                        + tweet.image +
-                        "\"></img><br><div class=\"tusername\">"
-                        + tweet.owner.username +
-                        "</div><br><div class=\"ttext\">"
-                        + tweet.caption +
-                        "</div><br><br>";
+        //             var tweethtml = "<img style=\"max-width: 100%; height: auto;\" src=\""
+        //                 + tweet.image +
+        //                 "\"></img><br><div class=\"tusername\">"
+        //                 + tweet.owner.username +
+        //                 "</div><br><div class=\"ttext\">"
+        //                 + tweet.caption +
+        //                 "</div><br><br>";
 
-                    $("#feed4").append(tweethtml);
-                });
-            });
-        }
+        //             $("#feed4").append(tweethtml);
+        //         });
+        //     });
+        // }
         //  getItemsAndBuildHtml();
 
-        // instagra feeds
-        (function ($) {
-            $(window).on('load', function () {
-                $.instagramFeed({
-                    'tag': 'humansoflatecapitalism',
-                    'container': "#feed1",
-                    'display_gallery': true,
-                    'items': 50,
-                    'items_per_row': 2,
-                    'margin': 0.5
-                });
-            });
-        })(jQuery);
+        // // instagra feeds
+        // (function ($) {
+        //     $(window).on('load', function () {
+        //         $.instagramFeed({
+        //             'tag': 'humansoflatecapitalism',
+        //             'container': "#feed1",
+        //             'display_gallery': true,
+        //             'items': 50,
+        //             'items_per_row': 2,
+        //             'margin': 0.5
+        //         });
+        //     });
+        // })(jQuery);
 
-        (function ($) {
-            $(window).on('load', function () {
-                $.instagramFeed({
-                    'tag': 'latecapitalism',
-                    'container': "#feed3",
-                    'display_gallery': true,
-                    'items': 50,
-                    'items_per_row': 2,
-                    'margin': 0.5
-                });
-            });
-        })(jQuery);
+        // (function ($) {
+        //     $(window).on('load', function () {
+        //         $.instagramFeed({
+        //             'tag': 'latecapitalism',
+        //             'container': "#feed3",
+        //             'display_gallery': true,
+        //             'items': 40,
+        //             'items_per_row': 2,
+        //             'margin': 0.5
+        //         });
+        //     });
+        // })(jQuery);
 
-        //firebase conf + conf for trollbox
-        var config = {
-            container: '#trollboxx',
-            firebase: {
-                apiKey: "AIzaSyAqdpjKouv3GcJWOePr8V3RX4Z5ZLYQ_Ko",
-                authDomain: "humansoflatecapitalism.firebaseapp.com",
-                databaseURL: "https://humansoflatecapitalism.firebaseio.com",
-                projectId: "humansoflatecapitalism",
-                storageBucket: "humansoflatecapitalism.appspot.com",
-                messagingSenderId: "556042637345",
-                appId: "1:556042637345:web:27764d4b88765db4d05360",
-                measurementId: "G-T50S7EMMED"
-            },
-            channel: 'Free Market Trollbox',
-            user: 'Human',
-            delayRender: false
-        };
+        // //firebase conf + conf for trollbox
+        // var config = {
+        //     container: '#trollboxx',
+        //     firebase: {
+        //         apiKey: "AIzaSyAqdpjKouv3GcJWOePr8V3RX4Z5ZLYQ_Ko",
+        //         authDomain: "humansoflatecapitalism.firebaseapp.com",
+        //         databaseURL: "https://humansoflatecapitalism.firebaseio.com",
+        //         projectId: "humansoflatecapitalism",
+        //         storageBucket: "humansoflatecapitalism.appspot.com",
+        //         messagingSenderId: "556042637345",
+        //         appId: "1:556042637345:web:27764d4b88765db4d05360",
+        //         measurementId: "G-T50S7EMMED"
+        //     },
+        //     channel: 'Free Market Trollbox',
+        //     user: 'Human',
+        //     delayRender: false
+        // };
         // Initialize Firebase
-        firebase.initializeApp(config.firebase);
-        firebase.analytics();
+        // firebase.initializeApp(config.firebase);
+        //firebase.analytics();
 
         //Initialize Trollbox
         // function initBox() {
@@ -152,14 +151,14 @@
 
 <body>
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v6.0"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v6.0">
+    </script>
     <div id="top-of-page">
         <div id="navbar">
             <ul>
                 <div id="navitems">
                     <li><a href="index.html" class="link">Feeds</a></li>
-                    <li><a href="#Organize" class="link">Organize</a></li>
+                    <li><a href="organize.html" class="link">Organize</a></li>
                     <li><a href="#Top100Memes" class="link">Top 100</a></li>
                     <li><a href="about.html" class="link">About</a></li>
                     <li><a href="#Blog" class="link">Blog</a></li>
@@ -221,17 +220,22 @@
                         </script>
                     </div>
                 </li>
-                <li>
-                    <div id="trollboxx-wrap">
-                        <div id="trollboxx"></div>
-                    </div>
-                </li>
             </ul>
         </div>
 
     </div>
 
     <div id="bottom-of-page" style="font-size: 0.8vw; text-align: center;">
+        yeah we know it sucks but this website does also not run for free
+        <div id="advertisments">
+            <!-- ima sorry for the add, but selfexploitation is no option either-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7578534773537226"
+                data-ad-slot="3754014506" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
         <div id="social-shares">
             <ul style="list-style: none;display: flex; justify-content: center; ">
                 <li>
@@ -264,4 +268,5 @@
     </div>
 
 </body>
+
 </html>
