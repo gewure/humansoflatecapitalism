@@ -145,6 +145,34 @@ li a:hover {
     border-width: 2px;
 }
 
+/* For the Top 100 Gallery  */
+.picture-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .picture {
+    width: 22%;
+    margin-bottom: 20px;
+  }
+  
+  .picture img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .picture h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .picture p {
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+  
+
 
 @keyframes rainbow-text {
     0% {
