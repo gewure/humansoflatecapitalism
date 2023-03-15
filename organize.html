@@ -2,15 +2,21 @@
 <html>
 
 <head>
-    <title>
-        Humans of Late Capitalism
-    </title>
+    <title>Humans of Late Capitalism</title>
     <meta charset="UTF-8">
     <meta name="description" content="Humans of Late Capitalism">
     <meta name="keywords"
-        content="Anticapitalism, Capitalism, #Humansoflatecapitalism, Society, Technology, Philosophy, Revolution, Progress, Kaptialismus, Late Capitalism">
+        content="Capitalism, #Humansoflatecapitalism, Society, Technology, Philosophy, Revolution, Progress, Kaptialismus, Late Capitalism">
     <meta name="author" content="Karl Marx">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel=“canonical“ href=“https://humansoflatecapitalism.com“/>
+
+    <!-- Monospace font-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <meta name="msvalidate.01" content="3293E0561C0A8581210DC3F56BF92DBA">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/site.css" />
@@ -23,7 +29,6 @@
     <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- Google ads-->
     <script data-ad-client="ca-pub-7578534773537226" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -31,8 +36,36 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+    <!-- 3rdparty-->
+    <script src="scripts/jquery.instagramFeed.min.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+    <!-- Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
     <!-- latecapitalism texts-->
     <script src="scripts/latecapitalismtext.js"></script>
+    <!-- youtube search embedded -->
+    <script src="scripts/ytembed.js"></script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50S7EMMED"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T50S7EMMED');
+    </script>
+
+
+    <!--Blotter.js for awesome effects-->
+    <!-- <script src="scripts/blotter.min.js"></script>
+    <script src="scripts/channelSplitMaterial.js"></script> -->
 
     <script>
         var lasttext = 0;
@@ -48,18 +81,74 @@
         }
 
         setInterval(writeLateCapitalismTextBanner, 20000);
-    </script>
 
+        var settings = {
+            "async": true,
+            "crossDomain": false,
+            "url": "https://cors-anywhere.herokuapp.com/https://thawing-bayou-32780.herokuapp.com/humansoflatecapitalism",
+            "method": "GET"
+        }
+
+        // function getItemsAndBuildHtml() {
+        //     $.ajax(settings).done(function (response) {
+        //         response.forEach(function (tweet) {
+
+        //             var tweethtml = "<img style=\"max-width: 100%; height: auto;\" src=\""
+        //                 + tweet.image +
+        //                 "\"></img><br><div class=\"tusername\">"
+        //                 + tweet.owner.username +
+        //                 "</div><br><div class=\"ttext\">"
+        //                 + tweet.caption +
+        //                 "</div><br><br>";
+
+        //             $("#feed4").append(tweethtml);
+        //         });
+        //     });
+        // }
+        //  getItemsAndBuildHtml();
+
+        // // instagra feeds
+        // (function ($) {
+        //     $(window).on('load', function () {
+        //         $.instagramFeed({
+        //             'tag': 'humansoflatecapitalism',
+        //             'container': "#feed1",
+        //             'display_gallery': true,
+        //             'items': 50,
+        //             'items_per_row': 2,
+        //             'margin': 0.5
+        //         });
+        //     });
+        // })(jQuery);
+
+        // (function ($) {
+        //     $(window).on('load', function () {
+        //         $.instagramFeed({
+        //             'tag': 'latecapitalism',
+        //             'container': "#feed3",
+        //             'display_gallery': true,
+        //             'items': 40,
+        //             'items_per_row': 2,
+        //             'margin': 0.5
+        //         });
+        //     });
+        // })(jQuery);
+
+
+    </script>
 </head>
 
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v6.0">
+    </script>
     <div id="top-of-page">
         <div id="navbar">
             <ul>
                 <div id="navitems">
                     <li><a href="index.html" class="link">Feeds</a></li>
                     <li><a href="organize.html" class="link">Organize</a></li>
-                    <li><a href="#Top100Memes" class="link">Top 100</a></li>
+                    <li><a href="#Top100Memes" class="link">Top</a></li>
                     <li><a href="about.html" class="link">About</a></li>
                     <li><a href="blog.html" class="link">Blog</a></li>
                     <li><a href="donate.html" class="link">Donate</a></li>
@@ -67,25 +156,24 @@
             </ul>
         </div>
         <div id="headtext" style="text-align: center; margin: auto; display:block; padding:10px">
-            <!-- TODO maybe make this an image to scale better
-                ... or how about a jq-approach using $(window).width() and adapt font-size accordingly?-->
+            <!-- TODO maybe make this an image to scale better .. but makes page slower and is UNCOOL -->
             <div id="ascii-banner">
                 <img src="assets/HumansLogoLarge.png" style="max-width: 100%; max-height:100%;width:auto; margin:auto">
                 <!-- <pre style="line-height: 85%; font-size:1vw;">
-                        ██╗  ██╗██╗   ██╗███╗   ███╗ █████╗ ███╗   ██╗███████╗     ██████╗ ███████╗                                    
-                        ██║  ██║██║   ██║████╗ ████║██╔══██╗████╗  ██║██╔════╝    ██╔═══██╗██╔════╝                                    
-                        ███████║██║   ██║██╔████╔██║███████║██╔██╗ ██║███████╗    ██║   ██║█████╗                                      
-                        ██╔══██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║╚════██║    ██║   ██║██╔══╝                                      
-                        ██║  ██║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║███████║    ╚██████╔╝██║                                         
-                        ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝     ╚═════╝ ╚═╝                                         
-                                                                                                                                       
-                        ██╗      █████╗ ████████╗███████╗     ██████╗ █████╗ ██████╗ ██╗████████╗ █████╗ ██╗     ██╗███████╗███╗   ███╗
-                        ██║     ██╔══██╗╚══██╔══╝██╔════╝    ██╔════╝██╔══██╗██╔══██╗██║╚══██╔══╝██╔══██╗██║     ██║██╔════╝████╗ ████║
-                        ██║     ███████║   ██║   █████╗      ██║     ███████║██████╔╝██║   ██║   ███████║██║     ██║███████╗██╔████╔██║
-                        ██║     ██╔══██║   ██║   ██╔══╝      ██║     ██╔══██║██╔═══╝ ██║   ██║   ██╔══██║██║     ██║╚════██║██║╚██╔╝██║
-                        ███████╗██║  ██║   ██║   ███████╗    ╚██████╗██║  ██║██║     ██║   ██║   ██║  ██║███████╗██║███████║██║ ╚═╝ ██║
-                        ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝     ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝╚══════╝╚═╝     ╚═╝
-                      </pre> -->
+                    ██╗  ██╗██╗   ██╗███╗   ███╗ █████╗ ███╗   ██╗███████╗     ██████╗ ███████╗
+                    ██║  ██║██║   ██║████╗ ████║██╔══██╗████╗  ██║██╔════╝    ██╔═══██╗██╔════╝
+                    ███████║██║   ██║██╔████╔██║███████║██╔██╗ ██║███████╗    ██║   ██║█████╗
+                    ██╔══██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║╚════██║    ██║   ██║██╔══╝
+                    ██║  ██║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║███████║    ╚██████╔╝██║
+                    ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝     ╚═════╝ ╚═╝
+
+                    ██╗      █████╗ ████████╗███████╗     ██████╗ █████╗ ██████╗ ██╗████████╗ █████╗ ██╗     ██╗███████╗███╗   ███╗
+                    ██║     ██╔══██╗╚══██╔══╝██╔════╝    ██╔════╝██╔══██╗██╔══██╗██║╚══██╔══╝██╔══██╗██║     ██║██╔════╝████╗ ████║
+                    ██║     ███████║   ██║   █████╗      ██║     ███████║██████╔╝██║   ██║   ███████║██║     ██║███████╗██╔████╔██║
+                    ██║     ██╔══██║   ██║   ██╔══╝      ██║     ██╔══██║██╔═══╝ ██║   ██║   ██╔══██║██║     ██║╚════██║██║╚██╔╝██║
+                    ███████╗██║  ██║   ██║   ███████╗    ╚██████╗██║  ██║██║     ██║   ██║   ██║  ██║███████╗██║███████║██║ ╚═╝ ██║
+                    ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝     ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝╚══════╝╚═╝     ╚═╝
+                  </pre> -->
             </div>
             <div id="banner-text" onclick=writeLateCapitalismTextBanner()>The term Late Capitalism been widely used
                 since the 21th century around the world to
@@ -93,6 +181,7 @@
                 business development.</div>
         </div>
     </div>
+    
     <div id="middle-of-page">
         <div id ="about-content-description">"It is harder to imagine the end of Captialism than the end of the World"<br> --- Slavoj Zizek <br><br> ...So how do we organize, now that we know how little we know about what we imagine we can design?</div>
         <div id ="blog-head"><h2>Late Capitalism Chat</h2></div>
