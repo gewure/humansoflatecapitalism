@@ -293,21 +293,36 @@ var ytEmbed = {
                 a.appendChild(span);
                 var img = document.createElement('img');
                 img.setAttribute('src', (entry.snippet.thumbnails ? entry.snippet.thumbnails.medium.url : ''));
-                img.setAttribute('style',"transform: scale(0.6);"); //TODO edited this
+                img.setAttribute('style',"transform: scale(1.3);"); //TODO edited this
                 span.appendChild(img);
                 var em = document.createElement('em');
                 span.appendChild(em);
 
-                //uploaded
+                // //uploaded
+                // if (this.cfg.layout == 'thumbnails') {
+                //     li.className = 'small';
+                //     li.appendChild(a);
+                // } else {
+                //     //this.cfg.layout = full
+                //     li.innerHTML = '<table cellspacing="0" cellpadding="0" border="0"><tr><td valign="top" rowspan="0"></td><td valign="top"><h2>' + entry.snippet.title + '</h2><span>' + this.formatDescription(entry.snippet.description) + '</span></td><td valign="top" style="width: 10%" class="meta"><div>' + (entry.contentDetails ? 'Duration: ' + ytEmbed.formatDuration(entry.contentDetails.duration) + '<br>' : '') + (entry.statistics ? 'Views: ' + entry.statistics.viewCount + '<br>' : '') + 'From: <a href="https://www.youtube.com/profile?user=' + entry.snippet.channelTitle + '">' + entry.snippet.channelTitle + '</a></div></td></tr></table>';
+                //     li.firstChild.firstChild.firstChild.firstChild.appendChild(a);
+                // }
+                // ul.appendChild(li);
+
                 if (this.cfg.layout == 'thumbnails') {
                     li.className = 'small';
                     li.appendChild(a);
                 } else {
                     //this.cfg.layout = full
-                    li.innerHTML = '<table cellspacing="0" cellpadding="0" border="0"><tr><td valign="top" rowspan="2"></td><td valign="top"><h3>' + entry.snippet.title + '</h3><span>' + this.formatDescription(entry.snippet.description) + '</span></td><td valign="top" style="width: 150px" class="meta"><div>' + (entry.contentDetails ? 'Duration: ' + ytEmbed.formatDuration(entry.contentDetails.duration) + '<br>' : '') + (entry.statistics ? 'Views: ' + entry.statistics.viewCount + '<br>' : '') + 'From: <a href="https://www.youtube.com/profile?user=' + entry.snippet.channelTitle + '">' + entry.snippet.channelTitle + '</a></div></td></tr></table>';
-                    li.firstChild.firstChild.firstChild.firstChild.appendChild(a);
+                    li.className = 'video-item';
+                    let div = document.createElement('div');
+                    div.className = 'video-details';
+                    div.innerHTML = '<h2>' + entry.snippet.title + '</h2><p>' + this.formatDescription(entry.snippet.description) + '</p><p class="meta">' + (entry.contentDetails ? 'Duration: ' + ytEmbed.formatDuration(entry.contentDetails.duration) + ' | ' : '') + (entry.statistics ? 'Views: ' + entry.statistics.viewCount + ' | ' : '') + 'From: <a href="https://www.youtube.com/profile?user=' + entry.snippet.channelTitle + '">' + entry.snippet.channelTitle + '</a></p>';
+                    li.appendChild(a);
+                    li.appendChild(div);
+                    ul.appendChild(li);
                 }
-                ul.appendChild(li);
+                
             }
 
             //for fixed to bottom videos
