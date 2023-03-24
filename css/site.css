@@ -117,7 +117,7 @@ li a:hover {
     background-color: #A52A2A;
     font-size: 2vw;
 }
-#blog-head {
+.blog-head {
     margin-top: 3%;
     margin-left:2%;
     border-color: black;
@@ -125,7 +125,7 @@ li a:hover {
     border-style: solid;
 }
 
-#about-content-description {
+.about-content-description {
     margin-top: 3%;
     margin-left:2%;
     border-color: black;
